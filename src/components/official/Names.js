@@ -10,7 +10,6 @@ const Names = () => {
     <Fragment>
       <ul>
         {players.map(player => {
-          console.log(player, current, 'PLayer and vurrent');
           return (
             <li>
               {player.name}
@@ -20,14 +19,6 @@ const Names = () => {
             </li>
           );
         })}
-        {/* <li>
-          {players.playerOne}
-          {current === players.playerOne ? <i className='fas fa-star' /> : null}
-        </li>
-        <li>
-          {players.playerTwo}
-          {current === players.playerTwo ? <i className='fas fa-star' /> : null}
-        </li> */}
       </ul>
     </Fragment>
   );

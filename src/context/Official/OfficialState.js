@@ -2,36 +2,38 @@ import React, { useReducer } from 'react';
 import OfficialContext from './officialContext';
 import OfficialReducer from './officialReducer';
 
-import { SET_NAMES } from '../types';
+import { SET_NAMES, ADD_SCORE } from '../types';
 
 const OfficialState = props => {
   const initialState = [
     {
       id: 1,
       totalScore: [],
-      turnScore: [],
+      turnScore: ['10', '20', '88', '180'],
       lastScore: null
     },
     {
       id: 2,
       totalScore: [],
-      turnScore: [],
+      turnScore: ['10', '20', '88', '180'],
       lastScore: null
     }
   ];
 
   const [state, dispatch] = useReducer(OfficialReducer, initialState);
 
-  const setNames = players => {
-    dispatch({ type: SET_NAMES, payload: players });
+  const addScore = (points, playerId) => {
+    dispatch({
+      type: ADD_SCORE,
+      payload: { points: points, playerId: playerId }
+    });
   };
 
   return (
     <OfficialContext.Provider
       value={{
-        p1: state[0],
-        p2: state[1],
-        setNames
+        state,
+        addScore
       }}
     >
       {props.children}

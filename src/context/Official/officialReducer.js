@@ -1,13 +1,16 @@
-import { SET_NAMES } from '../types';
+import { ADD_SCORE } from '../types';
 
 export default (state, action) => {
   switch (action.type) {
-    case SET_NAMES:
-      return {
-        ...state,
-        p1: { name: action.payload.playerOne },
-        p2: { name: action.payload.playerTwo }
-      };
+    case ADD_SCORE:
+      return state.map(player => {
+        if (player.id === action.payload.playerId) {
+          return {
+            ...player,
+            turnScore: [action.payload.points, ...player.turnScore]
+          };
+        } else return player;
+      });
 
     default:
       return state;

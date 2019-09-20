@@ -8,16 +8,7 @@ const Official = () => {
   const gameContext = useContext(GameContext);
   const officialContext = useContext(OfficialContext);
 
-  // const { setNames } = officialContext;
-
   const { players } = gameContext;
-
-  const { setNames } = officialContext;
-
-  useEffect(() => {
-    setNames(players);
-    // eslint-disable-next-line
-  }, []);
 
   return (
     <div>

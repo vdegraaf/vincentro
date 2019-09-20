@@ -6,15 +6,14 @@ const AddScore = () => {
   const gameContext = useContext(GameContext);
   const officialContext = useContext(OfficialContext);
 
-  const { addPlayers, current } = gameContext;
-  const { p1, p2 } = officialContext;
+  const { current } = gameContext;
+  const { addScore } = officialContext;
 
   const [state, setState] = useState({
-    s1: '',
-    s2: ''
+    score: Number
   });
 
-  const { s1, s2 } = state;
+  const { score } = state;
 
   const onChange = e => {
     setState({
@@ -25,31 +24,21 @@ const AddScore = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    addPlayers(state);
+    addScore(score, current.id);
   };
 
   return (
     <div>
       <form onSubmit={onSubmit}>
-        {current.id === p1.id ? (
-          <input
-            type='text'
-            name='s1'
-            placeholder='Player Uno'
-            value={s1}
-            onChange={onChange}
-            required
-          />
-        ) : (
-          <input
-            type='text'
-            name='s2'
-            placeholder='Player Dos'
-            value={s2}
-            onChange={onChange}
-            required
-          />
-        )}
+        <input
+          type='number'
+          name='score'
+          placeholder='Player Uno'
+          value={score}
+          onChange={onChange}
+          required
+        />
+
         <div>
           <input type='submit' value='BAM' />
         </div>
