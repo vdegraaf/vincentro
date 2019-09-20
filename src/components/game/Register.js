@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react';
-import PlayerContext from '../../context/players/playerContext';
+import GameContext from '../../context/game/gameContext';
 
 const Register = () => {
-  const playerContext = useContext(PlayerContext);
+  const gameContext = useContext(GameContext);
 
-  const { addPlayers } = playerContext;
+  const { addPlayers } = gameContext;
 
   const [state, setState] = useState({
     playerOne: '',

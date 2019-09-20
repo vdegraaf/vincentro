@@ -5,11 +5,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/pages/Home';
 import Official from './components/pages/Official';
 
-import PlayerState from './context/players/PlayerState';
+import GameState from './context/game/GameState';
 
 const App = () => {
   return (
-    <PlayerState>
+    <GameState>
       <div className='App'>
         <NavBar />
         <Router>
@@ -19,7 +19,7 @@ const App = () => {
           </Switch>
         </Router>
       </div>
-    </PlayerState>
+    </GameState>
   );
 };
 

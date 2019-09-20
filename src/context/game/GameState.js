@@ -1,16 +1,16 @@
 import React, { useReducer } from 'react';
-import PlayerContext from './playerContext';
-import PlayerReducer from './playerReducer';
+import GameContext from './gameContext';
+import GameReducer from './gameReducer';
 import { ADD_PLAYERS, SET_GAME } from '../types';
 
-const PlayerState = props => {
+const GameState = props => {
   const initialState = {
     game: '',
     players: [],
     current: {}
   };
 
-  const [state, dispatch] = useReducer(PlayerReducer, initialState);
+  const [state, dispatch] = useReducer(GameReducer, initialState);
 
   const addPlayers = game => {
     dispatch({ type: ADD_PLAYERS, payload: game });
@@ -24,7 +24,7 @@ const PlayerState = props => {
   };
 
   return (
-    <PlayerContext.Provider
+    <GameContext.Provider
       value={{
         players: state.players,
         current: state.current,
@@ -34,8 +34,8 @@ const PlayerState = props => {
       }}
     >
       {props.children}
-    </PlayerContext.Provider>
+    </GameContext.Provider>
   );
 };
 
-export default PlayerState;
+export default GameState;

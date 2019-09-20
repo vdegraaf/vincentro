@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import PlayerContext from '../../context/players/playerContext';
+import GameContext from '../../context/game/gameContext';
 
 const Type = () => {
-  const playerContext = useContext(PlayerContext);
+  const gameContext = useContext(GameContext);
 
-  const { setGameType, game } = playerContext;
+  const { setGameType, game } = gameContext;
 
   const onChange = e => {
     setGameType(e.target.value);
