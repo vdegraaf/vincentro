@@ -11,8 +11,8 @@ const App = () => {
   return (
     <GameState>
       <div className='App'>
-        <NavBar />
         <Router>
+          <NavBar />
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/501' component={Official} />

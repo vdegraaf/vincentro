@@ -1,10 +1,13 @@
 import React, { useState, useContext } from 'react';
+import { Redirect } from 'react-router-dom';
 import GameContext from '../../context/game/gameContext';
 
 const Register = () => {
   const gameContext = useContext(GameContext);
 
-  const { addPlayers } = gameContext;
+  const { addPlayers, game } = gameContext;
+
+  const [redirect, setRedirect] = useState(false);
 
   const [state, setState] = useState({
     playerOne: '',
@@ -23,35 +26,41 @@ const Register = () => {
   const onSubmit = e => {
     e.preventDefault();
     addPlayers(state);
-
-    // Do some form validation here
+    setRedirect(true);
+    setTimeout(() => {
+      setRedirect(false);
+    }, 2000);
   };
 
-  return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <input
-          type='text'
-          name='playerOne'
-          placeholder='Player Uno'
-          value={playerOne}
-          onChange={onChange}
-          required
-        />
-        <input
-          type='text'
-          name='playerTwo'
-          placeholder='Player Dos'
-          value={playerTwo}
-          onChange={onChange}
-          required
-        />
-        <div>
-          <input type='submit' value='Start Game' />
-        </div>
-      </form>
-    </div>
-  );
+  if (redirect) {
+    return <Redirect to={`/${game}`} />;
+  } else {
+    return (
+      <div>
+        <form onSubmit={onSubmit}>
+          <input
+            type='text'
+            name='playerOne'
+            placeholder='Player Uno'
+            value={playerOne}
+            onChange={onChange}
+            required
+          />
+          <input
+            type='text'
+            name='playerTwo'
+            placeholder='Player Dos'
+            value={playerTwo}
+            onChange={onChange}
+            required
+          />
+          <div>
+            <input type='submit' value='Start Game' />
+          </div>
+        </form>
+      </div>
+    );
+  }
 };
 
 export default Register;
