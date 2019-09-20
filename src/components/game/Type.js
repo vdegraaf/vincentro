@@ -1,17 +1,13 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import PlayerContext from '../../context/players/playerContext';
 
 const Type = () => {
   const playerContext = useContext(PlayerContext);
 
-  const [game, setGame] = useState('');
-
-  const { setGameType } = playerContext;
+  const { setGameType, game } = playerContext;
 
   const onChange = e => {
-    setGame(e.target.value);
-    setGameType(game);
-    console.log(game, 'Game in onChange');
+    setGameType(e.target.value);
   };
 
   return (

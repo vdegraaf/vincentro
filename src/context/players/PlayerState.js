@@ -17,7 +17,6 @@ const PlayerState = props => {
   };
 
   const setGameType = gameType => {
-    console.log(gameType, 'gameType and setGame call');
     dispatch({
       type: SET_GAME,
       payload: gameType
