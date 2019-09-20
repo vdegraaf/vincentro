@@ -11,11 +11,11 @@ const Names = () => {
       <ul>
         <li>
           {players.playerOne}
-          {current === players.playerOne ? <i class='fas fa-star' /> : null}
+          {current === players.playerOne ? <i className='fas fa-star' /> : null}
         </li>
         <li>
           {players.playerTwo}
-          {current === players.playerTwo ? <i class='fas fa-star' /> : null}
+          {current === players.playerTwo ? <i className='fas fa-star' /> : null}
         </li>
       </ul>
     </Fragment>
