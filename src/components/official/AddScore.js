@@ -33,14 +33,14 @@ const AddScore = () => {
         <input
           type='number'
           name='score'
-          placeholder='Player Uno'
+          placeholder='Add Points'
           value={score}
           onChange={onChange}
           required
         />
 
         <div>
-          <input type='submit' value='BAM' />
+          <input type='submit' value='Submit' />
         </div>
       </form>
     </div>

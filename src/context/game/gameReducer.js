@@ -14,7 +14,7 @@ export default (state, action) => {
     case CURRENT_PLAYER:
       return {
         ...state,
-        current: state.current.id === 1 ? 2 : 1
+        current: state.current.id === 1 ? state.players[1] : state.players[0]
       };
     case SET_GAME:
       return {

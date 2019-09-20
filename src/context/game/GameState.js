@@ -42,7 +42,8 @@ const GameState = props => {
         game: state.game,
         addPlayers,
         setGameType,
-        resetGame
+        resetGame,
+        switchPlayer
       }}
     >
       {props.children}

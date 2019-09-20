@@ -1,10 +1,28 @@
-import React, { useContext, Fragment } from 'react';
-import GameContext from '../../context/game/gameContext';
+import React, { useContext } from 'react';
+import OfficialContext from '../../context/official/officialContext';
 
 const TurnScore = () => {
-  const gameContext = useContext(GameContext);
+  const officialContext = useContext(OfficialContext);
+  const { players } = officialContext;
 
-  return <Fragment></Fragment>;
+  return (
+    <div className='listContainer'>
+      {players.map(player => {
+        return (
+          <>
+            <h2>playerID{player.id}</h2>
+            {player.turnScore.map((points, index) => {
+              return (
+                <div key={index} className='scoreList'>
+                  {points}
+                </div>
+              );
+            })}
+          </>
+        );
+      })}
+    </div>
+  );
 };
 
 export default TurnScore;
