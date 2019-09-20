@@ -5,16 +5,16 @@ export default (state, action) => {
     case ADD_PLAYERS:
       return {
         ...state,
-        players: action.payload,
-        current: action.payload.playerOne
+        players: [
+          { id: 1, name: action.payload.p1 },
+          { id: 2, name: action.payload.p2 }
+        ],
+        current: { id: 1, name: action.payload.p1 }
       };
     case CURRENT_PLAYER:
       return {
         ...state,
-        current:
-          state.current === state.players.playerOne
-            ? state.players.playerTwo
-            : state.players.playerOne
+        current: state.current.id === 1 ? 2 : 1
       };
     case SET_GAME:
       return {

@@ -9,14 +9,25 @@ const Names = () => {
   return (
     <Fragment>
       <ul>
-        <li>
+        {players.map(player => {
+          console.log(player, current, 'PLayer and vurrent');
+          return (
+            <li>
+              {player.name}
+              {current.name === player.name ? (
+                <i className='fas fa-star' />
+              ) : null}
+            </li>
+          );
+        })}
+        {/* <li>
           {players.playerOne}
           {current === players.playerOne ? <i className='fas fa-star' /> : null}
         </li>
         <li>
           {players.playerTwo}
           {current === players.playerTwo ? <i className='fas fa-star' /> : null}
-        </li>
+        </li> */}
       </ul>
     </Fragment>
   );

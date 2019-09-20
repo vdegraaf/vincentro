@@ -9,23 +9,23 @@ const Register = () => {
 
   const [redirect, setRedirect] = useState(false);
 
-  const [state, setState] = useState({
-    playerOne: '',
-    playerTwo: ''
+  const [names, setNames] = useState({
+    p1: '',
+    p2: ''
   });
 
-  const { playerOne, playerTwo } = state;
+  const { p1, p2 } = names;
 
   const onChange = e => {
-    setState({
-      ...state,
+    setNames({
+      ...names,
       [e.target.name]: e.target.value
     });
   };
 
   const onSubmit = e => {
     e.preventDefault();
-    addPlayers(state);
+    addPlayers(names);
     setRedirect(true);
     setTimeout(() => {
       setRedirect(false);
@@ -40,17 +40,17 @@ const Register = () => {
         <form onSubmit={onSubmit}>
           <input
             type='text'
-            name='playerOne'
+            name='p1'
             placeholder='Player Uno'
-            value={playerOne}
+            value={p1}
             onChange={onChange}
             required
           />
           <input
             type='text'
-            name='playerTwo'
+            name='p2'
             placeholder='Player Dos'
-            value={playerTwo}
+            value={p2}
             onChange={onChange}
             required
           />

@@ -4,15 +4,17 @@ import OfficialContext from '../../context/official/officialContext';
 
 const AddScore = () => {
   const gameContext = useContext(GameContext);
+  const officialContext = useContext(OfficialContext);
 
   const { addPlayers, current } = gameContext;
+  const { p1, p2 } = officialContext;
 
   const [state, setState] = useState({
-    p1: '',
-    p2: ''
+    s1: '',
+    s2: ''
   });
 
-  const { p1, p2 } = state;
+  const { s1, s2 } = state;
 
   const onChange = e => {
     setState({
@@ -26,26 +28,28 @@ const AddScore = () => {
     addPlayers(state);
   };
 
-  console.log(current, 'CURRENT', typeof current, 'TYPEOF');
   return (
     <div>
       <form onSubmit={onSubmit}>
-        <input
-          type='text'
-          name='p1'
-          placeholder='Player Uno'
-          value={p1}
-          onChange={onChange}
-          required
-        />
-        <input
-          type='text'
-          name='p2'
-          placeholder='Player Dos'
-          value={p2}
-          onChange={onChange}
-          required
-        />
+        {current.id === p1.id ? (
+          <input
+            type='text'
+            name='s1'
+            placeholder='Player Uno'
+            value={s1}
+            onChange={onChange}
+            required
+          />
+        ) : (
+          <input
+            type='text'
+            name='s2'
+            placeholder='Player Dos'
+            value={s2}
+            onChange={onChange}
+            required
+          />
+        )}
         <div>
           <input type='submit' value='BAM' />
         </div>

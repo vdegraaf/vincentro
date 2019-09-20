@@ -6,17 +6,17 @@ import { ADD_PLAYERS, SET_GAME, RESET_GAME, CURRENT_PLAYER } from '../types';
 const GameState = props => {
   const initialState = {
     game: '',
-    players: { playerOne: 'Vin', playerTwo: 'Sophie' },
-    current: ''
+    players: [{ id: 1, name: 'Vincent' }, { id: 2, name: 'Sophie' }],
+    current: {}
   };
 
   const [state, dispatch] = useReducer(GameReducer, initialState);
 
-  const addPlayers = game => {
-    dispatch({ type: ADD_PLAYERS, payload: game });
+  const addPlayers = players => {
+    dispatch({ type: ADD_PLAYERS, payload: players });
   };
 
-  const currentPlayer = () => {
+  const switchPlayer = () => {
     dispatch({ type: CURRENT_PLAYER });
   };
 
