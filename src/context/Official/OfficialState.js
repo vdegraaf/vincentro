@@ -6,8 +6,18 @@ import { SET_NAMES } from '../types';
 
 const OfficialState = props => {
   const initialState = {
-    p1: {},
-    p2: {}
+    p1: {
+      name: '',
+      totalScore: [],
+      turnScore: [],
+      lastScore: null
+    },
+    p2: {
+      name: '',
+      totalScore: [],
+      turnScore: [],
+      lastScore: null
+    }
   };
 
   const [state, dispatch] = useReducer(OfficialReducer, initialState);
@@ -19,7 +29,8 @@ const OfficialState = props => {
   return (
     <OfficialContext.Provider
       value={{
-        state,
+        p1: state.p1,
+        p2: state.p2,
         setNames
       }}
     >

@@ -7,7 +7,7 @@ const GameState = props => {
   const initialState = {
     game: '',
     players: { playerOne: 'Vin', playerTwo: 'Sophie' },
-    current: {}
+    current: ''
   };
 
   const [state, dispatch] = useReducer(GameReducer, initialState);
