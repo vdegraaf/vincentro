@@ -8,12 +8,12 @@ const TotalScore = () => {
 
   const { players, updateTotalScore } = officialContext;
   const { current } = gameContext;
-  console.log(current, 'CURRENT');
-  const { turnScore } = players[0];
+  const lastId = current.id === 1 ? 2 : 1;
+  const { turnScore } = players[lastId === 1 ? 0 : 1];
 
   useEffect(() => {
     if (turnScore.length > 0) {
-      updateTotalScore(1);
+      updateTotalScore(lastId);
     }
   }, [turnScore]);
 

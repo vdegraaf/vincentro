@@ -7,12 +7,12 @@ import { ADD_SCORE, UPDATE_TOTAL_SCORE } from '../types';
 
 const OfficialState = props => {
   const gameContext = useContext(GameContext);
-  const { switchPlayer, current } = gameContext;
+  const { switchPlayer } = gameContext;
 
   const initialState = [
     {
       id: 1,
-      totalScore: [501],
+      totalScore: ['501'],
       turnScore: [],
       lastScore: null
     },
@@ -37,7 +37,6 @@ const OfficialState = props => {
 
   const updateTotalScore = playerId => {
     const player = players.find(players => players.id === playerId);
-
     const updatedScore = player.totalScore[0] - player.turnScore[0];
     dispatch({
       type: UPDATE_TOTAL_SCORE,
