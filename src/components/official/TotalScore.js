@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, Fragment } from 'react';
+import React, { useContext, useEffect } from 'react';
 import OfficialContext from '../../context/official/officialContext';
 import GameContext from '../../context/game/gameContext';
 
@@ -15,6 +15,7 @@ const TotalScore = () => {
     if (turnScore.length > 0) {
       updateTotalScore(lastId);
     }
+    // eslint-disable-next-line
   }, [turnScore]);
 
   return (

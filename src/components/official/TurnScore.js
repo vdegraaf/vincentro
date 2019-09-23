@@ -10,7 +10,7 @@ const TurnScore = () => {
       {players.map(player => {
         return (
           <>
-            <h2>playerID{player.id}</h2>
+            <h2 key={player.id}>playerID{player.id}</h2>
             {player.turnScore.map((points, index) => {
               return (
                 <div key={index} className='scoreList'>

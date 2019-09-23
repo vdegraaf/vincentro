@@ -11,7 +11,7 @@ const Names = () => {
       <ul>
         {players.map(player => {
           return (
-            <li>
+            <li key={player.id}>
               {player.name}
               {current.name === player.name ? (
                 <i className='fas fa-star' />

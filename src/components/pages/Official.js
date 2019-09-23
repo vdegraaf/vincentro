@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import Names from '../official/Names';
 import AddScore from '../official/AddScore';
 import TurnScore from '../official/TurnScore';

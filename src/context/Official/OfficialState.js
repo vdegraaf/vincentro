@@ -1,4 +1,4 @@
-import React, { useReducer, useContext, useEffect } from 'react';
+import React, { useReducer, useContext } from 'react';
 import OfficialContext from './officialContext';
 import OfficialReducer from './officialReducer';
 import GameContext from '../game/gameContext';
@@ -13,14 +13,12 @@ const OfficialState = props => {
     {
       id: 1,
       totalScore: ['501'],
-      turnScore: [],
-      lastScore: null
+      turnScore: []
     },
     {
       id: 2,
       totalScore: ['501'],
-      turnScore: [],
-      lastScore: null
+      turnScore: []
     }
   ];
 
@@ -37,7 +35,19 @@ const OfficialState = props => {
 
   const updateTotalScore = playerId => {
     const player = players.find(players => players.id === playerId);
-    const updatedScore = player.totalScore[0] - player.turnScore[0];
+    let updatedScore;
+
+    if (
+      player.turnScore[0] > player.totalScore[0] ||
+      player.totalScore[0] - player.turnScore[0] < 2
+    ) {
+      updatedScore = player.totalScore[0];
+
+      // turnScore should be deleted
+    } else {
+      updatedScore = player.totalScore[0] - player.turnScore[0];
+    }
+
     dispatch({
       type: UPDATE_TOTAL_SCORE,
       payload: { playerId, updatedScore }

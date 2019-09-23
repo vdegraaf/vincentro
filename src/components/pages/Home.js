@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import Register from '../game/Register';
 import Type from '../game/Type';
 
