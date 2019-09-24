@@ -19,19 +19,22 @@ const TotalScore = () => {
   }, [turnScore]);
 
   return (
-    <div className='listContainer'>
+    <div className='container-l container-l--absolute'>
       {players.map(player => {
         return (
-          <>
+          <div className='container-m'>
             <h2>playerID: {player.id}</h2>
-            {player.totalScore.map((points, index) => {
-              return (
-                <div key={index} className='scoreList'>
-                  {points}
-                </div>
-              );
-            })}
-          </>
+            {player.totalScore
+              .slice(0)
+              .reverse()
+              .map((points, index) => {
+                return (
+                  <div key={index} className='box box-s'>
+                    {points}
+                  </div>
+                );
+              })}
+          </div>
         );
       })}
     </div>

@@ -7,20 +7,18 @@ const Names = () => {
   const { players, current } = gameContext;
 
   return (
-    <Fragment>
-      <ul>
-        {players.map(player => {
-          return (
-            <li key={player.id}>
-              {player.name}
-              {current.name === player.name ? (
-                <i className='fas fa-star' />
-              ) : null}
-            </li>
-          );
-        })}
-      </ul>
-    </Fragment>
+    <div className='container-name'>
+      {players.map(player => {
+        return (
+          <div key={player.id} className='box box-m'>
+            {player.name}
+            {current.name === player.name ? (
+              <i className='fas fa-star' />
+            ) : null}
+          </div>
+        );
+      })}
+    </div>
   );
 };
 

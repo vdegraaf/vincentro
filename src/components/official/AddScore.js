@@ -6,7 +6,7 @@ const AddScore = () => {
   const gameContext = useContext(GameContext);
   const officialContext = useContext(OfficialContext);
 
-  const { current } = gameContext;
+  const { current, resetGame } = gameContext;
   const { addScore } = officialContext;
 
   const [state, setState] = useState({
@@ -24,25 +24,31 @@ const AddScore = () => {
 
   const onSubmit = e => {
     e.preventDefault();
+
     addScore(score, current.id);
+    setState({ score: Number });
   };
 
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <input
-          type='number'
-          name='score'
-          placeholder='Add Points'
-          value={score}
-          onChange={onChange}
-          required
-        />
-
-        <div>
+    <div className='container-l footer'>
+      <form onSubmit={onSubmit} className='form-501'>
+        <div className='box box-m'>
+          <input
+            type='number'
+            name='score'
+            placeholder='Add Points'
+            value={score}
+            onChange={onChange}
+            required
+            min='0'
+            max='180'
+          />
+        </div>
+        <div className='box box-m'>
           <input type='submit' value='Submit' />
         </div>
       </form>
+      {/* <button onClick={() => resetGame()}>Reset</button> */}
     </div>
   );
 };

@@ -37,12 +37,12 @@ const OfficialState = props => {
     const player = players.find(players => players.id === playerId);
     let updatedScore;
 
-    if (
-      player.turnScore[0] > player.totalScore[0] ||
-      player.totalScore[0] - player.turnScore[0] < 2
-    ) {
-      updatedScore = player.totalScore[0];
+    if (player.totalScore[0] - player.turnScore[0] === 0) {
+      alert('You gave won!');
+    }
 
+    if (player.totalScore[0] - player.turnScore[0] < 2) {
+      updatedScore = player.totalScore[0];
       // turnScore should be deleted
     } else {
       updatedScore = player.totalScore[0] - player.turnScore[0];

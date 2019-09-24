@@ -24,7 +24,7 @@ export default (state, action) => {
     case RESET_GAME:
       return {
         game: '',
-        players: null,
+        players: [],
         current: {}
       };
 

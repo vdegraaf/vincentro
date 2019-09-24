@@ -6,8 +6,8 @@ import TotalScore from '../official/TotalScore';
 
 const Official = () => {
   return (
-    <div>
-      <h1>Official darts: 501</h1>
+    <div className='container'>
+      <h1 className='subtitle'>Official darts: 501</h1>
       <Names />
       <TurnScore />
       <TotalScore />

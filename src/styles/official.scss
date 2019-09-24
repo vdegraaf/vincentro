@@ -1,0 +1,48 @@
+.container {
+  width: 100%;
+  // padding: 30px;
+  &-name {
+    display: flex;
+  }
+
+  &-l {
+    display: flex;
+    justify-content: space-between;
+    &--absolute {
+      position: absolute;
+      top: 64px;
+      left: 110px;
+    }
+  }
+
+  &-m {
+    text-align: center;
+  }
+}
+
+.subtitle {
+  width: 300px;
+}
+
+.box {
+  &-m {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.form-501 {
+  display: flex;
+  width: 100%;
+  & input {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
