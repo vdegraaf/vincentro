@@ -35,7 +35,6 @@ const GameState = props => {
   };
 
   const setWinner = id => {
-    console.log(id, 'setWinner');
     dispatch({
       type: SET_WINNER,
       payload: id
