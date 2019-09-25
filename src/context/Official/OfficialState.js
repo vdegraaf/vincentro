@@ -1,13 +1,13 @@
-import React, { useReducer, useContext } from 'react';
+import React, { useReducer, useContext, useEffect } from 'react';
 import OfficialContext from './officialContext';
 import OfficialReducer from './officialReducer';
 import GameContext from '../game/gameContext';
 
-import { ADD_SCORE, UPDATE_TOTAL_SCORE } from '../types';
+import { ADD_SCORE, UPDATE_TOTAL_SCORE, RESET_OFFICIAL } from '../types';
 
 const OfficialState = props => {
   const gameContext = useContext(GameContext);
-  const { switchPlayer } = gameContext;
+  const { switchPlayer, setWinner, winner } = gameContext;
 
   const initialState = [
     {
@@ -24,6 +24,12 @@ const OfficialState = props => {
 
   const [players, dispatch] = useReducer(OfficialReducer, initialState);
 
+  useEffect(() => {
+    if (winner === null) {
+      resetOfficial();
+    }
+  }, [winner]);
+
   const addScore = (points, playerId) => {
     dispatch({
       type: ADD_SCORE,
@@ -35,22 +41,31 @@ const OfficialState = props => {
 
   const updateTotalScore = playerId => {
     const player = players.find(players => players.id === playerId);
+    const { turnScore, totalScore } = player;
+
     let updatedScore;
 
-    if (player.totalScore[0] - player.turnScore[0] === 0) {
-      alert('You gave won!');
-    }
-
-    if (player.totalScore[0] - player.turnScore[0] < 2) {
-      updatedScore = player.totalScore[0];
+    if (totalScore[0] - turnScore[0] === 0) {
+      updatedScore = 0;
+      setWinner(playerId);
+    } else if (totalScore[0] - turnScore[0] < 2) {
+      updatedScore = totalScore[0];
       // turnScore should be deleted
     } else {
-      updatedScore = player.totalScore[0] - player.turnScore[0];
+      updatedScore = totalScore[0] - turnScore[0];
     }
 
     dispatch({
       type: UPDATE_TOTAL_SCORE,
       payload: { playerId, updatedScore }
+    });
+    if (updatedScore === 0) {
+    }
+  };
+
+  const resetOfficial = () => {
+    dispatch({
+      type: RESET_OFFICIAL
     });
   };
 
@@ -59,7 +74,8 @@ const OfficialState = props => {
       value={{
         players,
         addScore,
-        updateTotalScore
+        updateTotalScore,
+        resetOfficial
       }}
     >
       {props.children}

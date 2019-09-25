@@ -1,4 +1,4 @@
-import React, { useContext, Fragment } from 'react';
+import React, { useContext } from 'react';
 import GameContext from '../../context/game/gameContext';
 
 const Names = () => {

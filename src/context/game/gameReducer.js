@@ -1,4 +1,10 @@
-import { ADD_PLAYERS, SET_GAME, RESET_GAME, CURRENT_PLAYER } from '../types';
+import {
+  ADD_PLAYERS,
+  SET_GAME,
+  RESET_GAME,
+  CURRENT_PLAYER,
+  SET_WINNER
+} from '../types';
 
 export default (state, action) => {
   switch (action.type) {
@@ -16,6 +22,11 @@ export default (state, action) => {
         ...state,
         current: state.current.id === 1 ? state.players[1] : state.players[0]
       };
+    case SET_WINNER:
+      return {
+        ...state,
+        winner: state.players.find(player => player.id === action.payload)
+      };
     case SET_GAME:
       return {
         ...state,
@@ -23,9 +34,8 @@ export default (state, action) => {
       };
     case RESET_GAME:
       return {
-        game: '',
-        players: [],
-        current: {}
+        ...state,
+        winner: null
       };
 
     default:

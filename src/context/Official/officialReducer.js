@@ -1,4 +1,4 @@
-import { ADD_SCORE, UPDATE_TOTAL_SCORE } from '../types';
+import { ADD_SCORE, UPDATE_TOTAL_SCORE, RESET_OFFICIAL } from '../types';
 
 export default (state, action) => {
   switch (action.type) {
@@ -21,6 +21,19 @@ export default (state, action) => {
           };
         } else return player;
       });
+    case RESET_OFFICIAL:
+      return [
+        {
+          id: 1,
+          totalScore: ['501'],
+          turnScore: []
+        },
+        {
+          id: 2,
+          totalScore: ['501'],
+          turnScore: []
+        }
+      ];
     default:
       return state;
   }

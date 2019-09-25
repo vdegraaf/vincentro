@@ -1,13 +1,20 @@
 import React, { useReducer } from 'react';
 import GameContext from './gameContext';
 import GameReducer from './gameReducer';
-import { ADD_PLAYERS, SET_GAME, RESET_GAME, CURRENT_PLAYER } from '../types';
+import {
+  ADD_PLAYERS,
+  SET_GAME,
+  RESET_GAME,
+  CURRENT_PLAYER,
+  SET_WINNER
+} from '../types';
 
 const GameState = props => {
   const initialState = {
     game: '',
     players: [{ id: 1, name: 'Vincent' }, { id: 2, name: 'Sophie' }],
-    current: {}
+    current: {},
+    winner: null
   };
 
   const [state, dispatch] = useReducer(GameReducer, initialState);
@@ -27,6 +34,14 @@ const GameState = props => {
     });
   };
 
+  const setWinner = id => {
+    console.log(id, 'setWinner');
+    dispatch({
+      type: SET_WINNER,
+      payload: id
+    });
+  };
+
   // Not used yet
   const resetGame = () => {
     dispatch({
@@ -40,7 +55,9 @@ const GameState = props => {
         players: state.players,
         current: state.current,
         game: state.game,
+        winner: state.winner,
         addPlayers,
+        setWinner,
         setGameType,
         resetGame,
         switchPlayer
