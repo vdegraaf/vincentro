@@ -1,6 +1,7 @@
 import React from 'react';
 import Names from '../layouts/Names';
 import ScoreContainer from '../cricket/ScoreContainer';
+import Numbers from '../cricket/Numbers';
 
 const Cricket = () => {
   return (
@@ -10,7 +11,9 @@ const Cricket = () => {
         <div className='sideContainer'>
           <ScoreContainer id={1} />
         </div>
-        <div className='numberContainer'>Numbers</div>
+
+        <Numbers />
+
         <div className='sideContainer'>
           <ScoreContainer id={2} />
         </div>
