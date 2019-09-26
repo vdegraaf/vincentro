@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import CricketContext from '../../context/cricket/cricketContext';
 import Names from '../layouts/Names';
 import ScoreContainer from '../cricket/ScoreContainer';
 import Numbers from '../cricket/Numbers';
 import TotalScore from '../cricket/TotalScore';
+import Winner from '../cricket/Winner';
 
 const Cricket = () => {
+  const cricketContext = useContext(CricketContext);
+  const { winnerCheck, players } = cricketContext;
+  const [winner, setWinner] = useState(null);
+
+  useEffect(() => {
+    const w = winnerCheck();
+    setWinner(w);
+  }, [players]);
+
   return (
     <div>
+      {winner && <Winner id={winner} />}
       <Names />
-
       <div className='mainContainer'>
         <div className='sideContainer'>
           <TotalScore id={1} />

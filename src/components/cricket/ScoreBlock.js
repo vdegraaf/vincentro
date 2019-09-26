@@ -59,7 +59,7 @@ const ScoreBlock = ({ id, number }) => {
             <img
               id='decrease'
               className='points__item score__item--button min-icon'
-              // onClick={countingScore}
+              onClick={() => decreaseScore(id, number)}
               src={require(`../../images/min-icon.png`)}
               alt='icon'
             />
@@ -68,7 +68,7 @@ const ScoreBlock = ({ id, number }) => {
             <div
               id='decrease'
               className='score__item score__item--button min-icon'
-              // onClick={countingScore}
+              onClick={() => decreaseScore(id, number)}
             >
               {decreaseButton}
             </div>

@@ -3,7 +3,8 @@ import {
   DECREMENT_COUNTER,
   INCREMENT_SCORE,
   DECREMENT_SCORE,
-  UPDATE_TOTAL_SCORE
+  UPDATE_TOTAL_SCORE,
+  RESET_GAME
 } from '../typesCricket';
 
 export default (state, action) => {
@@ -81,6 +82,35 @@ export default (state, action) => {
           };
         } else return player;
       });
+    case RESET_GAME:
+      return [
+        {
+          id: 1,
+          scores: [
+            { key: '20', points: 0, counter: 0 },
+            { key: '19', points: 0, counter: 0 },
+            { key: '18', points: 0, counter: 0 },
+            { key: '17', points: 0, counter: 0 },
+            { key: '16', points: 0, counter: 0 },
+            { key: '15', points: 0, counter: 0 },
+            { key: '25', points: 0, counter: 0 }
+          ],
+          totalScore: 0
+        },
+        {
+          id: 2,
+          scores: [
+            { key: '20', points: 0, counter: 0 },
+            { key: '19', points: 0, counter: 0 },
+            { key: '18', points: 0, counter: 0 },
+            { key: '17', points: 0, counter: 0 },
+            { key: '16', points: 0, counter: 0 },
+            { key: '15', points: 0, counter: 0 },
+            { key: '25', points: 0, counter: 0 }
+          ],
+          totalScore: 0
+        }
+      ];
 
     default:
       return state;

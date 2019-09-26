@@ -6,7 +6,8 @@ import {
   INCREMENT_COUNTER,
   DECREMENT_SCORE,
   DECREMENT_COUNTER,
-  UPDATE_TOTAL_SCORE
+  UPDATE_TOTAL_SCORE,
+  RESET_GAME
 } from '../typesCricket';
 
 const CricketState = props => {
@@ -107,13 +108,40 @@ const CricketState = props => {
     });
   };
 
+  const winnerCheck = () => {
+    const counterP1 = state
+      .find(player => player.id === 1)
+      .scores.map(score => (score.counter === 3 ? true : false));
+    const counterP2 = state
+      .find(player => player.id === 2)
+      .scores.map(score => (score.counter === 3 ? true : false));
+
+    const totalScoreP1 = state.find(player => player.id === 1).totalScore;
+    const totalScoreP2 = state.find(player => player.id === 2).totalScore;
+
+    if (counterP1.every(i => i === true) && totalScoreP1 >= totalScoreP2) {
+      return 1;
+    }
+    if (counterP2.every(i => i === true) && totalScoreP2 >= totalScoreP1) {
+      return 2;
+    }
+  };
+
+  const resetGame = () => {
+    dispatch({
+      type: RESET_GAME
+    });
+  };
+
   return (
     <CricketContext.Provider
       value={{
         players: state,
         addScore,
         decreaseScore,
-        updateTotalScore
+        updateTotalScore,
+        winnerCheck,
+        resetGame
       }}
     >
       {props.children}

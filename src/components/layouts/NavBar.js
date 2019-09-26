@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const NavBar = () => {
   return (
     <Fragment>
-      <h1 className='header'>VINCENTRO DARTS </h1>
+      <h1 className='header'></h1>
       <ul>
         <li>
           <Link to='/'>Home</Link>
