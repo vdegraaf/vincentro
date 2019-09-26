@@ -3,7 +3,11 @@ import OfficialContext from './officialContext';
 import OfficialReducer from './officialReducer';
 import GameContext from '../game/gameContext';
 
-import { ADD_SCORE, UPDATE_TOTAL_SCORE, RESET_OFFICIAL } from '../types';
+import {
+  ADD_SCORE,
+  UPDATE_TOTAL_SCORE,
+  RESET_OFFICIAL
+} from '../typesOfficial';
 
 const OfficialState = props => {
   const gameContext = useContext(GameContext);

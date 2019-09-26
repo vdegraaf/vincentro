@@ -1,4 +1,8 @@
-import { ADD_SCORE, UPDATE_TOTAL_SCORE, RESET_OFFICIAL } from '../types';
+import {
+  ADD_SCORE,
+  UPDATE_TOTAL_SCORE,
+  RESET_OFFICIAL
+} from '../typesOfficial';
 
 export default (state, action) => {
   switch (action.type) {

@@ -8,22 +8,25 @@ import Cricket from './components/pages/Cricket';
 
 import GameState from './context/game/GameState';
 import OfficialState from './context/official/OfficialState';
+import CricketState from './context/cricket/CricketState';
 
 const App = () => {
   return (
     <GameState>
-      <OfficialState>
-        <div className='App'>
-          <Router>
-            <NavBar />
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/501' component={Official} />
-              <Route exact path='/cricket' component={Cricket} />
-            </Switch>
-          </Router>
-        </div>
-      </OfficialState>
+      <CricketState>
+        <OfficialState>
+          <div className='App'>
+            <Router>
+              <NavBar />
+              <Switch>
+                <Route exact path='/' component={Home} />
+                <Route exact path='/501' component={Official} />
+                <Route exact path='/cricket' component={Cricket} />
+              </Switch>
+            </Router>
+          </div>
+        </OfficialState>
+      </CricketState>
     </GameState>
   );
 };

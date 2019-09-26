@@ -1,11 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import GameContext from '../../context/game/gameContext';
 
 const Register = () => {
   const gameContext = useContext(GameContext);
 
-  const { addPlayers, game } = gameContext;
+  const { addPlayers, game, players } = gameContext;
 
   const [redirect, setRedirect] = useState(false);
 
@@ -15,6 +15,15 @@ const Register = () => {
   });
 
   const { p1, p2 } = names;
+
+  useEffect(() => {
+    if (players) {
+      setNames({
+        p1: players[0].name,
+        p2: players[1].name
+      });
+    }
+  }, []);
 
   const onChange = e => {
     setNames({

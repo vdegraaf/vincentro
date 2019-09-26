@@ -7,7 +7,7 @@ import {
   RESET_GAME,
   CURRENT_PLAYER,
   SET_WINNER
-} from '../types';
+} from '../typesOfficial';
 
 const GameState = props => {
   const initialState = {

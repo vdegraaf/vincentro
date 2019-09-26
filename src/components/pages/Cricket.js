@@ -1,18 +1,20 @@
 import React from 'react';
 import Names from '../layouts/Names';
+import ScoreContainer from '../cricket/ScoreContainer';
 
 const Cricket = () => {
   return (
-    <div className='container'>
-      <h1>Cricket</h1>
+    <div>
       <Names />
-      <ul>
-        <li>minus</li>
-        <li>plus</li>
-        <li>points</li>
-        <li>plus </li>
-        <li>minus</li>
-      </ul>
+      <div className='mainContainer'>
+        <div className='sideContainer'>
+          <ScoreContainer id={1} />
+        </div>
+        <div className='numberContainer'>Numbers</div>
+        <div className='sideContainer'>
+          <ScoreContainer id={2} />
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,30 @@
+
+.scoreContainer {
+  display: flex;
+
+
+}
+
+.score {
+
+  &__item {
+    margin: 5% 0px;
+    padding: 15px 20px;
+    width: 20px;
+    &--button {
+      text-align: center;
+      line-height: 225%;
+    }
+  }
+}
+
+.counter-icon, .min-icon {
+  width: 30px;
+  height: 30px;
+  // width: 10px;
+  // height: 10px;
+}
+
+// .min-icon {
+
+// }

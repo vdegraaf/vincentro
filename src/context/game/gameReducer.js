@@ -4,7 +4,7 @@ import {
   RESET_GAME,
   CURRENT_PLAYER,
   SET_WINNER
-} from '../types';
+} from '../typesOfficial';
 
 export default (state, action) => {
   switch (action.type) {
