@@ -2,7 +2,8 @@ import {
   INCREMENT_COUNTER,
   DECREMENT_COUNTER,
   INCREMENT_SCORE,
-  DECREMENT_SCORE
+  DECREMENT_SCORE,
+  UPDATE_TOTAL_SCORE
 } from '../typesCricket';
 
 export default (state, action) => {
@@ -68,6 +69,15 @@ export default (state, action) => {
                 };
               } else return score;
             })
+          };
+        } else return player;
+      });
+    case UPDATE_TOTAL_SCORE:
+      return state.map(player => {
+        if (player.id === action.payload.id) {
+          return {
+            ...player,
+            totalScore: action.payload.totalScore
           };
         } else return player;
       });

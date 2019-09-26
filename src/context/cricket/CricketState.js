@@ -5,7 +5,8 @@ import {
   INCREMENT_SCORE,
   INCREMENT_COUNTER,
   DECREMENT_SCORE,
-  DECREMENT_COUNTER
+  DECREMENT_COUNTER,
+  UPDATE_TOTAL_SCORE
 } from '../typesCricket';
 
 const CricketState = props => {
@@ -94,12 +95,25 @@ const CricketState = props => {
     }
   };
 
+  const updateTotalScore = id => {
+    const totalScore = state
+      .find(player => player.id === id)
+      .scores.map(score => score.points)
+      .reduce((a, b) => a + b, 0);
+
+    dispatch({
+      type: UPDATE_TOTAL_SCORE,
+      payload: { id, totalScore }
+    });
+  };
+
   return (
     <CricketContext.Provider
       value={{
         players: state,
         addScore,
-        decreaseScore
+        decreaseScore,
+        updateTotalScore
       }}
     >
       {props.children}
