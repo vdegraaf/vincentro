@@ -3,7 +3,6 @@ import GameContext from '../../context/game/gameContext';
 
 const Type = () => {
   const gameContext = useContext(GameContext);
-
   const { setGameType, game } = gameContext;
 
   const onChange = e => {
@@ -11,33 +10,39 @@ const Type = () => {
   };
 
   return (
-    <div>
-      <form>
+    <div className='container container--radio'>
+      <label className='label label--radio'>
         <input
           type='radio'
           name='game'
           value='501'
           checked={game === '501'}
           onChange={onChange}
+          className='input--radio'
+        />
+        <img
+          className={`checkmark
+          ${game === '501' ? 'checkmark--true' : 'checkmark--false'}
+        `}
         />{' '}
         501
+      </label>
+      <label className='label label--radio'>
         <input
           type='radio'
           name='game'
           value='Cricket'
           checked={game === 'Cricket'}
           onChange={onChange}
-        />{' '}
+          className='input--radio'
+        />
+        <img
+          className={`checkmark
+          ${game === 'Cricket' ? 'checkmark--true' : 'checkmark--false'}
+        `}
+        />
         Cricket
-        <input
-          type='radio'
-          name='game'
-          value='Clock'
-          checked={game === 'Clock'}
-          onChange={onChange}
-        />{' '}
-        Around the Clock
-      </form>
+      </label>
     </div>
   );
 };

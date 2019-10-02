@@ -3,14 +3,12 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <Fragment>
-      <h1 className='header'></h1>
-      <ul>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-      </ul>
-    </Fragment>
+    <div className='container'>
+      <div className='menu'>
+        <Link to='/'>Home</Link>
+      </div>
+      <header className='header'></header>
+    </div>
   );
 };
 
