@@ -45,26 +45,32 @@ const Register = () => {
     return <Redirect to={`/${game}`} />;
   } else {
     return (
-      <div>
-        <form onSubmit={onSubmit}>
+      <div className='container container__players'>
+        <form onSubmit={onSubmit} className='form__players'>
           <input
             type='text'
             name='p1'
-            placeholder='Player Uno'
+            placeholder='PLAYERONE'
             value={p1}
             onChange={onChange}
             required
+            className='input input__players'
           />
           <input
             type='text'
             name='p2'
-            placeholder='Player Dos'
+            placeholder='PLAYERTWO'
             value={p2}
             onChange={onChange}
             required
+            className='input input__players'
           />
           <div>
-            <input type='submit' value='Start Game' />
+            <input
+              type='submit'
+              value='START GAME'
+              className='input input__players input__players--button'
+            />
           </div>
         </form>
       </div>

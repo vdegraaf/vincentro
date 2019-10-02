@@ -12,7 +12,7 @@ import {
 const GameState = props => {
   const initialState = {
     game: '',
-    players: [{ id: 1, name: 'Vincent' }, { id: 2, name: 'Sophie' }],
+    players: [{ id: 1, name: '' }, { id: 2, name: '' }],
     current: {},
     winner: null
   };

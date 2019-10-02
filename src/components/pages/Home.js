@@ -6,7 +6,6 @@ const Home = () => {
   return (
     <div>
       <Type />
-      <h2>Add your players</h2>
       <Register />
     </div>
   );
