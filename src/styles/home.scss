@@ -3,6 +3,10 @@
   height: 18vh;
   justify-content: center;
 
+  &--header {
+    position: relative;
+  }
+
   &--radio {
     justify-content: space-around;
   }
@@ -14,18 +18,21 @@
 
 .menu {
   display: flex;
+  position: absolute;
+  left: 6px;
   width: 20%;
   margin: auto;
   padding: 20px 0px;
   align-items: center;
   justify-content: center;
+  bottom: 10px;
 }
 
 .header {
   background-image: url("../images/logo-vincentro.png");
   background-repeat: no-repeat;
   background-size: contain;
-  width: 70%;
+  width: 90%;
   margin-top: 20px;
 }
 

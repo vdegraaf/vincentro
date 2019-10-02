@@ -46,7 +46,7 @@ const Register = () => {
   } else {
     return (
       <div className='container container__players'>
-        <form onSubmit={onSubmit} className='form__players'>
+        <form onSubmit={onSubmit} autocomplete='off' className='form__players'>
           <input
             type='text'
             name='p1'
@@ -54,6 +54,7 @@ const Register = () => {
             value={p1}
             onChange={onChange}
             required
+            spellcheck='false'
             className='input input__players'
           />
           <input
@@ -63,6 +64,7 @@ const Register = () => {
             value={p2}
             onChange={onChange}
             required
+            spellcheck='false'
             className='input input__players'
           />
           <div>

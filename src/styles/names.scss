@@ -1,0 +1,22 @@
+.container--names {
+  display: flex;
+  height: 20px;
+  justify-content: space-between;
+  font-size: 25px;
+}
+.box {
+  height: auto;
+}
+
+.totalScore {
+  margin-top: -20px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  border-bottom: 1px orangered solid;
+  &--1 {
+    text-align: end;
+  }
+  &--2 {
+    text-align: start;
+  }
+}

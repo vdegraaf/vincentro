@@ -7,7 +7,7 @@ const Names = () => {
   const { players, current } = gameContext;
 
   return (
-    <div className='container-name'>
+    <div className='container--names'>
       {players.map(player => {
         return (
           <div key={player.id} className='box box-m'>

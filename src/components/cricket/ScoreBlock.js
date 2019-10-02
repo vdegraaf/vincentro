@@ -19,7 +19,7 @@ const ScoreBlock = ({ id, number }) => {
           {points === 0 && (
             <img
               id='decrease'
-              className='points__item score__item--button min-icon'
+              className='score__item points__item '
               onClick={() => decreaseScore(id, number)}
               src={require(`../../images/min-icon.png`)}
               alt='icon'
@@ -28,7 +28,7 @@ const ScoreBlock = ({ id, number }) => {
           {points !== 0 && (
             <div
               id='decrease'
-              className='score__item score__item--button min-icon'
+              className='score__item '
               onClick={() => decreaseScore(id, number)}
             >
               {decreaseButton}
@@ -36,7 +36,7 @@ const ScoreBlock = ({ id, number }) => {
           )}
           <img
             id='increase'
-            className='score__item score__item--closure counter-icon'
+            className='score__item '
             onClick={() => addScore(id, number)}
             src={require(`../../images/counter-${counter}.png`)}
             alt='icon'
@@ -50,7 +50,7 @@ const ScoreBlock = ({ id, number }) => {
         <>
           <img
             id='increase'
-            className='score__item score__item--closure counter-icon'
+            className='score__item '
             onClick={() => addScore(id, number)}
             src={require(`../../images/counter-${counter}.png`)}
             alt='icon'
@@ -58,7 +58,7 @@ const ScoreBlock = ({ id, number }) => {
           {points === 0 && (
             <img
               id='decrease'
-              className='points__item score__item--button min-icon'
+              className='score__item '
               onClick={() => decreaseScore(id, number)}
               src={require(`../../images/min-icon.png`)}
               alt='icon'
@@ -67,7 +67,7 @@ const ScoreBlock = ({ id, number }) => {
           {points !== 0 && (
             <div
               id='decrease'
-              className='score__item score__item--button min-icon'
+              className='score__item '
               onClick={() => decreaseScore(id, number)}
             >
               {decreaseButton}

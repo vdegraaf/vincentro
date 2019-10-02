@@ -11,7 +11,7 @@ const TotalScore = ({ id }) => {
     updateTotalScore(id);
   }, [scores]);
 
-  return <div>{totalScore}</div>;
+  return <div className={`totalScore totalScore--${id}`}>{totalScore}</div>;
 };
 
 export default TotalScore;
