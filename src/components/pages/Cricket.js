@@ -17,7 +17,7 @@ const Cricket = () => {
   }, [players]);
 
   return (
-    <div>
+    <div className='container__cricket'>
       {winner && <Winner id={winner} />}
       <Names />
       <div className='mainContainer'>

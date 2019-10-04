@@ -6,9 +6,11 @@ const Winner = () => {
   const { winner, resetGame } = gameContext;
 
   return (
-    <div>
-      <div>{winner.name} has won</div>
-      <button onClick={() => resetGame()}>Play Again</button>
+    <div className='popup'>
+      <div className='popup__inner'>
+        <div className='popup__text'>{winner.name} has won</div>
+        <button onClick={() => resetGame()}>Play Again</button>
+      </div>
     </div>
   );
 };
