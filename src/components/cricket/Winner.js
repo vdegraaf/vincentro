@@ -6,14 +6,26 @@ const Winner = ({ id }) => {
   const gameContext = useContext(GameContext);
   const cricketContext = useContext(CricketContext);
 
-  const { players } = gameContext;
-  const winner = players.find(player => player.id === id).name;
-  const { resetGame } = cricketContext;
+  const winner = gameContext.players
+    .find(player => player.id === id)
+    .name.toUpperCase();
+
+  const {
+    resetGame,
+    players: [p1, p2]
+  } = cricketContext;
+  const scoreDiff = (p1.totalScore - p2.totalScore) * -1;
 
   return (
-    <div>
-      <div>{winner} has won</div>
-      <button onClick={() => resetGame()}>Play Again</button>
+    <div className='popup'>
+      <div className='popup__inner'>
+        <div className='popup__text'>
+          <b>{winner}</b> has won with <h2>{scoreDiff}</h2>
+        </div>
+        <button className='popup__button' onClick={() => resetGame()}>
+          Play Again
+        </button>
+      </div>
     </div>
   );
 };

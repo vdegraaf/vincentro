@@ -15,7 +15,7 @@ const TotalScore = () => {
     if (turnScore.length > 0) {
       updateTotalScore(lastId);
     }
-    // eslint-disable-next-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [turnScore]);
 
   return (

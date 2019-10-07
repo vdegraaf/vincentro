@@ -48,7 +48,7 @@ const AddScore = () => {
           <input type='submit' value='Submit' />
         </div>
       </form>
-      {/* <button onClick={() => resetGame()}>Reset</button> */}
+      <button onClick={() => resetGame()}>Reset</button>
     </div>
   );
 };

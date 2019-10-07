@@ -54,7 +54,7 @@ const Register = () => {
             value={p1}
             onChange={onChange}
             required
-            spellcheck='false'
+            spellCheck='false'
             className='input input__players'
           />
           <input
@@ -64,7 +64,7 @@ const Register = () => {
             value={p2}
             onChange={onChange}
             required
-            spellcheck='false'
+            spellCheck='false'
             className='input input__players'
           />
           <div>

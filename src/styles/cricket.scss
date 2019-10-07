@@ -64,7 +64,7 @@
 
   &__inner {
     position: absolute;
-    left: 20%;
+    left: 15%;
     top: 25%;
     width: 60%;
     height: 35%;
@@ -73,8 +73,7 @@
     align-items: center;
     flex-direction: column;
     border-radius: 50%;
-    border: 25px solid ORANGERED;
-
+    border: 25px solid orangered;
     animation: border 3s infinite;
     background: white;
   }
@@ -84,16 +83,23 @@
     text-align: center;
     line-height: 4;
   }
+
+  &__button {
+    border: 1px solid orangered;
+    background-color: transparent;
+    padding: 10px;
+    margin-top: -35px;
+  }
 }
 
 @keyframes border {
   0% {
-    border: 25px solid ORANGERED;
+    border: 25px solid orangered;
   }
   50% {
-    border: 25px solid green;
+    border: 25px solid white;
   }
   100% {
-    border: 25px solid ORANGERED;
+    border: 25px solid orangered;
   }
 }
