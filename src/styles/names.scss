@@ -6,6 +6,9 @@
 }
 .box {
   height: auto;
+  &-s {
+    height: 26px;
+  }
 }
 
 .totalScore {
@@ -19,4 +22,8 @@
   &--2 {
     text-align: start;
   }
+}
+
+.turn {
+  background-color: orangered;
 }

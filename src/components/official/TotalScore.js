@@ -22,8 +22,11 @@ const TotalScore = () => {
     <div className='container-l container-l--absolute'>
       {players.map(player => {
         return (
-          <div className='container-m'>
-            <h2>playerID: {player.id}</h2>
+          <div
+            className={`container-m ${
+              current.id === player.id ? `turn` : null
+            }`}
+          >
             {player.totalScore
               .slice(0)
               .reverse()

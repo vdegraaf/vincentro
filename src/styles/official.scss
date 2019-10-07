@@ -7,16 +7,25 @@
 
   &-l {
     display: flex;
+    margin-top: 20px;
     justify-content: space-between;
+    font-size: 20px;
+
     &--absolute {
       position: absolute;
-      top: 64px;
-      left: 110px;
+      width: 100%;
+      top: 22px;
+      font-size: 24px;
+      justify-content: space-around;
     }
   }
 
   &-m {
     text-align: center;
+
+    &--turn {
+      margin-top: 30px;
+    }
   }
 }
 
@@ -31,6 +40,12 @@
   }
 }
 
+// Form
+
+input:focus {
+  outline-offset: 0;
+}
+
 .form-501 {
   display: flex;
   width: 100%;
@@ -41,8 +56,23 @@
   }
 }
 
+.addScore {
+  font-size: 20px;
+  font-weight: 300;
+
+  &:focus {
+    outline-offset: 0;
+  }
+}
+
+.button__official {
+  font-size: inherit;
+  width: inherit;
+}
+
 .footer {
   position: fixed;
   width: 100%;
   bottom: 0;
+  background-color: white;
 }

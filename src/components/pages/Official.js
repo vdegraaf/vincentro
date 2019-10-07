@@ -11,8 +11,7 @@ const Official = () => {
   const { winner } = gameContext;
 
   return (
-    <div className='container'>
-      <h1 className='subtitle'>Official darts: 501</h1>
+    <div className='container__official'>
       <Names />
       <TurnScore />
       <TotalScore />
