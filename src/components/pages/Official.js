@@ -5,6 +5,7 @@ import AddScore from '../official/AddScore';
 import TurnScore from '../official/TurnScore';
 import TotalScore from '../official/TotalScore';
 import Winner from '../official/Winner';
+import FinishSuggestions from '../../components/official/FinishSuggestions';
 
 const Official = () => {
   const gameContext = useContext(GameContext);
@@ -15,6 +16,7 @@ const Official = () => {
       <Names />
       <TurnScore />
       <TotalScore />
+      <FinishSuggestions />
       {winner ? <Winner /> : <AddScore />}
     </div>
   );
