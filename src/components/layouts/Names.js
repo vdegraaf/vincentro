@@ -11,10 +11,12 @@ const Names = () => {
       {players.map(player => {
         return (
           <div key={player.id} className='box box-m'>
-            {player.name}
             {current.name === player.name && game === '501' ? (
               <i className='fas fa-star' />
-            ) : null}
+            ) : (
+              <div className='starPlaceholder'></div>
+            )}
+            {player.name}
           </div>
         );
       })}
