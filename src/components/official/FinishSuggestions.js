@@ -3,40 +3,50 @@ import OfficialContext from '../../context/official/officialContext';
 import GameContext from '../../context/game/gameContext';
 import possibleFinishes from './FinishSuggestionsData';
 
-function FinishSuggestions({totalScore}) {
+function FinishSuggestions({ totalScore }) {
   const officialContext = useContext(OfficialContext);
   const gameContext = useContext(GameContext);
   let dart1;
   let dart2;
-  const {current } = gameContext
+  const { current } = gameContext;
 
-  const [possibleFinish, setPossibleFinish] = useState(possibleFinishes[totalScore])
-  let inputEl = useRef(null)
-  let inputElTwo = useRef(null)
-
-  useEffect(() => {
-    setPossibleFinish(possibleFinishes[totalScore])
-  }, [totalScore])
+  const [possibleFinish, setPossibleFinish] = useState(
+    possibleFinishes[totalScore]
+  );
+  let inputEl = useRef(null);
+  let inputElTwo = useRef(null);
 
   useEffect(() => {
-    clear()
-  }, [current])
+    setPossibleFinish(possibleFinishes[totalScore]);
+  }, [totalScore]);
 
-  const onChange = (e) => {
-    
-    setPossibleFinish(possibleFinishes[totalScore - e.target.value])
-  }
+  useEffect(() => {
+    clear();
+  }, [current]);
+
+  const onChange = e => {
+    let dart = e.target.value;
+
+    if (totalScore - dart > 100 || totalScore - dart === 99) {
+      setPossibleFinish('Not Possible')
+    } else {
+      setPossibleFinish(possibleFinishes[totalScore - e.target.value]);
+    }
+  };
 
   const clear = () => {
-    
-    inputEl.current.value = ""
-    inputElTwo.current.value = ""
-  }
+    setPossibleFinish(possibleFinishes[totalScore])
+    inputEl.current.value = '';
+    inputElTwo.current.value = '';
+  };
 
   return (
     <div className='finish'>
-      <button onClick={clear}>CLEAR</button>
-      <p style={{ fontSize: '12px' }}>Possible finish: {possibleFinish}</p> 
+      {possibleFinish && (
+        <p style={{ fontSize: '14px', marginTop: '20px' }}>
+          finish: <b style={{ fontSize: '20px' }}>{possibleFinish}</b>
+        </p>
+      )}
       <input
         type='number'
         placeholder='dart 1'
