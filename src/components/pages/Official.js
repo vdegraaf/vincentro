@@ -16,7 +16,6 @@ const Official = () => {
       <Names />
       <TurnScore />
       <TotalScore />
-      <FinishSuggestions />
       {winner ? <Winner /> : <AddScore />}
     </div>
   );

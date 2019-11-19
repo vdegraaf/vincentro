@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import OfficialContext from '../../context/official/officialContext';
 import GameContext from '../../context/game/gameContext';
+import FinishSuggestions from '../../components/official/FinishSuggestions';
 
 const TotalScore = () => {
   const officialContext = useContext(OfficialContext);
@@ -19,27 +20,32 @@ const TotalScore = () => {
   }, [turnScore]);
 
   return (
-    <div className='container-l container-l--absolute'>
-      {players.map(player => {
-        return (
-          <div
-            className={`container-m ${
-              current.id === player.id ? `turn` : null
-            }`}
-          >
-            {player.totalScore
-              .slice(0)
-              .reverse()
-              .map((points, index) => {
-                return (
-                  <div key={index} className='box box-s'>
-                    {points}
-                  </div>
-                );
-              })}
-          </div>
-        );
-      })}
+    <div>
+      <div className='container-l container-l--absolute'>
+        {players.map(player => {
+          return (
+            <div
+              className={`container-m ${
+                current.id === player.id ? `turn` : null
+              }`}
+            >
+              {player.totalScore
+                .slice(0)
+                .reverse()
+                .map((points, index) => {
+                  return (
+                    <div key={index} className='box box-s'>
+                      {points}
+                    </div>
+                  );
+                })}
+              <div>
+                <FinishSuggestions totalScore={player.totalScore[0]} />
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
