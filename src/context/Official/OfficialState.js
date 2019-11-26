@@ -35,8 +35,6 @@ const OfficialState = props => {
   }, [winner]);
 
   const addScore = (points, playerId) => {
-    console.log('points:', points)
-
     dispatch({
       type: ADD_SCORE,
       payload: { points: points, playerId: playerId }
@@ -50,8 +48,11 @@ const OfficialState = props => {
     const { turnScore, totalScore } = player;
 
     let updatedScore;
+    if(turnScore === "-") {
+      updatedScore = 0
+    }
 
-    if (totalScore[0] - turnScore[0] === 0) {
+    else if (totalScore[0] - turnScore[0] === 0) {
       updatedScore = 0;
       setWinner(playerId);
     } else if (totalScore[0] - turnScore[0] < 2) {
@@ -65,8 +66,7 @@ const OfficialState = props => {
       type: UPDATE_TOTAL_SCORE,
       payload: { playerId, updatedScore }
     });
-    if (updatedScore === 0) {
-    }
+ 
   };
 
   const resetOfficial = () => {

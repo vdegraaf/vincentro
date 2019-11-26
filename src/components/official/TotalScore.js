@@ -52,6 +52,8 @@ const TotalScore = () => {
                 .slice(0)
                 .reverse()
                 .map((points, index) => {
+       
+               
                   return (
                     <div key={index} className='box box-s'>
                       {points}

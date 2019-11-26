@@ -21,6 +21,9 @@ const TurnScore = () => {
               .slice(0)
               .reverse()
               .map((points, index) => {
+                if(points === 0 ) {
+                  points = "-"
+                }
                 return (
                   <div key={index} className='box box-s'>
                     {points}
