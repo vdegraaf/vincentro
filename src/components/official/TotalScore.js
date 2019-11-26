@@ -19,10 +19,29 @@ const TotalScore = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [turnScore]);
 
+  const getAvg = (array) => {
+
+    if(array.length === 0) {
+
+      return 0
+    }
+
+    const newArr = array.map(item => {
+      return parseInt(item)
+    })
+
+    const arrAvg = arr => arr.reduce((a,b) => a + b, 0) / arr.length
+    
+    return Math.round(arrAvg(newArr))
+
+  }
+
+
   return (
     <div>
       <div className='container-l container-l--absolute'>
         {players.map(player => {
+
           return (
             <div
               className={`container-m ${
@@ -41,6 +60,13 @@ const TotalScore = () => {
                 })}
               <div>
                 <FinishSuggestions totalScore={player.totalScore[0]} />
+                <div>
+                  <span>average: {
+                    getAvg(player.turnScore)
+                    }</span>
+                  <span>darts: {player.turnScore.length * 3}
+                  </span>
+                  </div>
               </div>
             </div>
           );

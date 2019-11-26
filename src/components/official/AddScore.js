@@ -6,14 +6,31 @@ const AddScore = () => {
   const gameContext = useContext(GameContext);
   const officialContext = useContext(OfficialContext);
 
-  const { current, resetGame } = gameContext;
-  const { addScore } = officialContext;
+  const { current} = gameContext;
+  const { addScore, players } = officialContext;
 
   const [state, setState] = useState({
     score: Number
   });
 
   const { score } = state;
+
+  const validScoreCheck = () => {
+    let currentScore
+    
+    players.forEach(player => {
+      if (player.id === current.id) {
+        return currentScore = player.totalScore;
+      }
+    });
+
+    console.log('currentScore:', currentScore)
+
+    if (score >= currentScore) {
+      console.log('score is higher');
+      return true;
+    }
+  };
 
   const onChange = e => {
     setState({
@@ -24,6 +41,13 @@ const AddScore = () => {
 
   const onSubmit = e => {
     e.preventDefault();
+    if (validScoreCheck()) {
+      console.log('if statement calidScore true')
+      setState({score: '-' });
+    }
+
+    console.log(score, 'score');
+    console.log('state:',state)
 
     addScore(score, current.id);
     setState({ score: Number });
