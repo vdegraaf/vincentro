@@ -1,10 +1,8 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
-import OfficialContext from '../../context/official/officialContext';
 import GameContext from '../../context/game/gameContext';
 import possibleFinishes from './FinishSuggestionsData';
 
 function FinishSuggestions({ totalScore }) {
-  const officialContext = useContext(OfficialContext);
   const gameContext = useContext(GameContext);
   let dart1;
   let dart2;
@@ -22,6 +20,8 @@ function FinishSuggestions({ totalScore }) {
 
   useEffect(() => {
     clear();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [current]);
 
   const onChange = e => {

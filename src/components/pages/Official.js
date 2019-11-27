@@ -11,8 +11,10 @@ const Official = () => {
   const { winner, switchPlayer } = gameContext;
 
   useEffect(() => {
-    switchPlayer()
-  }, [])
+    switchPlayer();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className='container__official'>

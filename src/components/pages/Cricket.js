@@ -12,8 +12,8 @@ const Cricket = () => {
   const [winner, setWinner] = useState(null);
 
   useEffect(() => {
-    const w = winnerCheck();
-    setWinner(w);
+    setWinner(winnerCheck());
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [players]);
 
   return (

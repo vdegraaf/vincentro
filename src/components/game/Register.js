@@ -23,6 +23,7 @@ const Register = () => {
         p2: players[1].name
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onChange = e => {

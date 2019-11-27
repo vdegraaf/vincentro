@@ -16,6 +16,7 @@ const TurnScore = () => {
             className={`container-m container-m--turn ${
               current.id === player.id ? `turn` : null
             }`}
+            key={player.id.toString()}
           >
             {player.turnScore
               .slice(0)

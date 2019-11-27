@@ -48,13 +48,12 @@ const TotalScore = () => {
               className={`container-m ${
                 current.id === player.id ? `turn` : null
               }`}
+              key={player.id.toString()}
             >
               {player.totalScore
                 .slice(0)
                 .reverse()
                 .map((points, index) => {
-       
-               
                   return (
                     <div key={index} className='box box-s'>
                       {points}

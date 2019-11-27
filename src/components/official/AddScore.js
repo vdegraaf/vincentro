@@ -9,7 +9,7 @@ const AddScore = () => {
   const { id } = gameContext.current;
   const { addScore, players } = officialContext;
 
-  const [score, setScore] = useState();
+  const [score, setScore] = useState('');
 
   const validScoreCheck = () => {
     const { totalScore } = players.find(player => player.id === id);

@@ -24,7 +24,6 @@ const GameState = props => {
   };
 
   const switchPlayer = () => {
-    console.log('siwtchPlayer:', initialState.current)
     dispatch({ type: CURRENT_PLAYER });
   };
 
@@ -42,12 +41,6 @@ const GameState = props => {
     });
   };
 
-  // const setCurrent = () =>  {
-  //   dispatch({
-  //     type: SET_CURRENT,
-  //     payload: id
-  //   });
-  // }
   // Not used yet
   const resetGame = () => {
     dispatch({
