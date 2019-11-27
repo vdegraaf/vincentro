@@ -12,7 +12,7 @@ const ScoreContainer = ({ id }) => {
   return (
     <div>
       {player.scores.map(s => {
-        return <ScoreBlock id={id} number={s.key} />;
+        return <ScoreBlock id={id} number={s.key} key={s.key.toString()} />;
       })}
     </div>
   );

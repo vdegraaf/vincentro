@@ -4,11 +4,9 @@ import GameContext from '../../context/game/gameContext';
 
 const Register = () => {
   const gameContext = useContext(GameContext);
-
   const { addPlayers, game, players } = gameContext;
 
   const [redirect, setRedirect] = useState(false);
-
   const [names, setNames] = useState({
     p1: '',
     p2: ''

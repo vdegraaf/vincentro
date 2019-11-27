@@ -9,7 +9,7 @@ const Numbers = () => {
   return (
     <div className='numberContainer'>
       {numbers.map(number => (
-        <div className='numberContainer--number'>{number}</div>
+        <div className='numberContainer--number' key={number.toString()}>{number}</div>
       ))}
     </div>
   );

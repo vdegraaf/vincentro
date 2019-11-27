@@ -8,10 +8,12 @@ import Winner from '../official/Winner';
 
 const Official = () => {
   const gameContext = useContext(GameContext);
-  const { winner, switchPlayer } = gameContext;
+  const { winner, switchPlayer, current } = gameContext;
 
   useEffect(() => {
-    switchPlayer();
+    if(Object.keys(current).length === 0 && current.constructor === Object) {
+      switchPlayer();
+    }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
