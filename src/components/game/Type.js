@@ -24,7 +24,7 @@ const Type = () => {
           className={`checkmark
           ${game === '501' ? 'checkmark--true' : 'checkmark--false'}
         `}
-        alt="checkbox"
+        alt=""
         />{' '}
         501
       </label>
@@ -41,7 +41,7 @@ const Type = () => {
           className={`checkmark
           ${game === 'Cricket' ? 'checkmark--true' : 'checkmark--false'}
         `}
-        alt="checkbox"
+        alt=""
         />
         Cricket
       </label>

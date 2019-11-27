@@ -47,7 +47,7 @@ const Register = () => {
   } else {
     return (
       <div className='container container__players'>
-        <form onSubmit={onSubmit} autocomplete='off' className='form__players'>
+        <form onSubmit={onSubmit} autoComplete='off' className='form__players'>
           <input
             type='text'
             name='p1'
