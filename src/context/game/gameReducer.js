@@ -20,7 +20,7 @@ export default (state, action) => {
     case CURRENT_PLAYER:
       return {
         ...state,
-        current: state.current.id === 1 ? state.players[1] : state.players[0]
+        current: state.current.id === {} ? state.players[1] : state.current.id === 1 ? state.players[1] : state.players[0]
       };
     case SET_WINNER:
       return {

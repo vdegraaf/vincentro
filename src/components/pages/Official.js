@@ -1,15 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import GameContext from '../../context/game/gameContext';
 import Names from '../layouts/Names';
 import AddScore from '../official/AddScore';
 import TurnScore from '../official/TurnScore';
 import TotalScore from '../official/TotalScore';
 import Winner from '../official/Winner';
-import FinishSuggestions from '../../components/official/FinishSuggestions';
 
 const Official = () => {
   const gameContext = useContext(GameContext);
-  const { winner } = gameContext;
+  const { winner, switchPlayer } = gameContext;
+
+  useEffect(() => {
+    switchPlayer()
+  }, [])
 
   return (
     <div className='container__official'>

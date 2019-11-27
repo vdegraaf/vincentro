@@ -16,12 +16,12 @@ const OfficialState = props => {
   const initialState = [
     {
       id: 1,
-      totalScore: ['501'],
+      totalScore: [501],
       turnScore: []
     },
     {
       id: 2,
-      totalScore: ['501'],
+      totalScore: [501],
       turnScore: []
     }
   ];
@@ -44,15 +44,10 @@ const OfficialState = props => {
   };
 
   const updateTotalScore = playerId => {
-    const player = players.find(players => players.id === playerId);
-    const { turnScore, totalScore } = player;
-
+    const { turnScore, totalScore } = players.find(players => players.id === playerId);
     let updatedScore;
-    if(turnScore === "-") {
-      updatedScore = 0
-    }
 
-    else if (totalScore[0] - turnScore[0] === 0) {
+    if (totalScore[0] - turnScore[0] === 0) {
       updatedScore = 0;
       setWinner(playerId);
     } else if (totalScore[0] - turnScore[0] < 2) {

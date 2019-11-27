@@ -6,21 +6,19 @@ const AddScore = () => {
   const gameContext = useContext(GameContext);
   const officialContext = useContext(OfficialContext);
 
-  const { current} = gameContext;
+  const { id } = gameContext.current;
   const { addScore, players } = officialContext;
 
-  const [score, setScore] = useState()
+  const [score, setScore] = useState();
 
   const validScoreCheck = () => {
-    let currentScore
-    
-    players.forEach(player => {
-      if (player.id === current.id) {
-        return currentScore = player.totalScore;
-      }
-    });
+    const { totalScore } = players.find(player => player.id === id);
 
-    if (score >= currentScore) {
+    if (!totalScore) {
+      return;
+    }
+
+    if (score > totalScore[0] || totalScore[0] - score === 1) {
       return true;
     }
   };
@@ -31,13 +29,10 @@ const AddScore = () => {
 
   const onSubmit = e => {
     e.preventDefault();
+    let points = validScoreCheck() ? 0 : score;
 
-    if (validScoreCheck()) {
-      addScore(0, current.id)
-    } else (
-      addScore(score, current.id)
-    )
-    setScore("")
+    addScore(points, id);
+    setScore('');
   };
 
   return (

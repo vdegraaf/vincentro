@@ -14,6 +14,7 @@ const TotalScore = () => {
 
   useEffect(() => {
     if (turnScore.length > 0) {
+      
       updateTotalScore(lastId);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
