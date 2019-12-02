@@ -25,69 +25,65 @@ function FinishSuggestions() {
   }, [players]);
 
   useEffect(() => {
-    clear()
-  }, [current])
+    clear();
+  }, [current]);
 
   const getFinishes = () => {
     setFinish({
       1: possibleFinishes[players[0].totalScore[0]],
       2: possibleFinishes[players[1].totalScore[0]]
     });
-
   };
 
   const onChange = e => {
-
     let dart = inputEl.current.value + inputElTwo.current.value;
-    let player = players.find(player => player.id === current.id)
-    let id = player.id
-    
-    if(id === 1) {
-    setFinish({
-      1: possibleFinishes[players[0].totalScore[0] - dart],
-      2: possibleFinishes[players[1].totalScore[0]]
-      
-    })
-  } else {
-    setFinish({
-      1: possibleFinishes[players[0].totalScore[0]],
-      2: possibleFinishes[players[1].totalScore[0] - dart]
-      
-    })
-  }
+    let player = players.find(player => player.id === current.id);
+    let id = player.id;
 
-  };
-
-  const clear = () => {
-    if(inputElTwo.current && inputEl.current) {
-    inputEl.current.value = '';
-    inputElTwo.current.value = '';
+    if (id === 1) {
+      setFinish({
+        1: possibleFinishes[players[0].totalScore[0] - dart],
+        2: possibleFinishes[players[1].totalScore[0]]
+      });
+    } else {
+      setFinish({
+        1: possibleFinishes[players[0].totalScore[0]],
+        2: possibleFinishes[players[1].totalScore[0] - dart]
+      });
     }
   };
 
+  const clear = () => {
+    if (inputElTwo.current && inputEl.current) {
+      inputEl.current.value = '';
+      inputElTwo.current.value = '';
+    }
+  };
 
   return (
-    <div>        
-      <input
-        type='number'
-        placeholder='dart 1'
-        name='dart1'
-        value={dart1}
-        onChange={onChange}
-        ref={inputEl}
-      />
-      <input
-        type='number'
-        placeholder='dart 2'
-        name='dart2'
-        value={dart2}
-        onChange={onChange}
-        ref={inputElTwo}
-      />
     <div>
-      <div>P1: {finish[1]}</div>
-      <div>P2: {finish[2]}</div>
-    </div>
+      <div className={"input "  + current.id}>
+        <input
+          type='number'
+          placeholder='dart 1'
+          name='dart1'
+          value={dart1}
+          onChange={onChange}
+          ref={inputEl}
+        />
+        <input
+          type='number'
+          placeholder='dart 2'
+          name='dart2'
+          value={dart2}
+          onChange={onChange}
+          ref={inputElTwo}
+        />
+      </div>
+      <div>
+        {finish[1] && <div>P1: {finish[1]}</div>}
+        {finish[2] && <div>P2: {finish[2]}</div>}
+      </div>
     </div>
   );
 }
