@@ -14,7 +14,7 @@ const Winner = ({ id }) => {
     resetGame,
     players: [p1, p2]
   } = cricketContext;
-  const scoreDiff = (p1.totalScore - p2.totalScore) * -1;
+  const scoreDiff = Math.abs(p1.totalScore - p2.totalScore);
 
   return (
     <div className='popup'>

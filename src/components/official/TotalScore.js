@@ -60,16 +60,17 @@ const TotalScore = () => {
                     </div>
                   );
                 })}
-              <div>
-                <FinishSuggestions totalScore={player.totalScore[0]} />
-                <div>
-                  <span>average: {
+        
+        
+                
+                <div className="stats">
+                  <span className="stats__item">avg: {
                     getAvg(player.turnScore)
                     }</span>
-                  <span>darts: {player.turnScore.length * 3}
+                  <span  className="stats__item">darts: {player.turnScore.length * 3}
                   </span>
                   </div>
-              </div>
+              
             </div>
           );
         })}
