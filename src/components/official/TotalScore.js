@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import OfficialContext from '../../context/official/officialContext';
 import GameContext from '../../context/game/gameContext';
-import FinishSuggestions from '../../components/official/FinishSuggestions';
 
 const TotalScore = () => {
   const officialContext = useContext(OfficialContext);

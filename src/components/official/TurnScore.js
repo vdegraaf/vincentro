@@ -22,6 +22,7 @@ const TurnScore = () => {
               .slice(0)
               .reverse()
               .map((points, index) => {
+                console.log('players:', players)
                 if(points === 0 ) {
                   points = "-"
                 }

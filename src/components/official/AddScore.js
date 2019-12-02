@@ -13,7 +13,7 @@ const AddScore = () => {
 
   const validScoreCheck = () => {
     const { totalScore } = players.find(player => player.id === id);
-
+   
     if (!totalScore) {
       return;
     }
@@ -30,7 +30,6 @@ const AddScore = () => {
   const onSubmit = e => {
     e.preventDefault();
     let points = validScoreCheck() ? 0 : score;
-
     addScore(points, id);
     setScore('');
   };

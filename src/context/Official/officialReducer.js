@@ -31,12 +31,12 @@ export default (state, action) => {
       return [
         {
           id: 1,
-          totalScore: ['501'],
+          totalScore: [501],
           turnScore: []
         },
         {
           id: 2,
-          totalScore: ['501'],
+          totalScore: [501],
           turnScore: []
         }
       ];

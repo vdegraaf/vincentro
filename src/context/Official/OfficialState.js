@@ -35,6 +35,7 @@ const OfficialState = props => {
   }, [winner]);
 
   const addScore = (points, playerId) => {
+    console.log('ppoints:', points)
     dispatch({
       type: ADD_SCORE,
       payload: { points: points, playerId: playerId }
