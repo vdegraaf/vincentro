@@ -10,15 +10,12 @@ import FinishSuggestions from '../official/FinishSuggestions'
 
 const Official = () => {
   const gameContext = useContext(GameContext);
-  
   const { winner, switchPlayer, current } = gameContext;
-  
 
   useEffect(() => {
     if(Object.keys(current).length === 0 && current.constructor === Object) {
       switchPlayer();
     }
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -28,9 +25,7 @@ const Official = () => {
       <TurnScore />
       <TotalScore />
       {winner ? <Winner /> : <AddScore />}
-    
       <FinishSuggestions  />
-      
     </div>
   );
 };
