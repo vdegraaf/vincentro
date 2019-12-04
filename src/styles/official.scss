@@ -77,18 +77,25 @@ input:focus {
 }
 
 .finish {
-  width: 100%;
-  max-width: 170px;
-  border: 1px solid salmon;
-}
-
-.hide {
-  display: none;
-}
-
-.show {
   display: block;
+  width: 100%;
 }
+
+.input-501 {
+  width: 100px;
+  margin: auto;
+
+  &-1 {
+    margin-right: 100%;
+    border: 1px solid red;
+    transition: all 2s linear;
+    left: -100px;
+  }
+  &-2 {
+    margin-right: 0;
+  }
+}
+
 
 .footer {
   position: fixed;
@@ -96,4 +103,3 @@ input:focus {
   bottom: 20px;
   background-color: white;
 }
-

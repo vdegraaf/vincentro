@@ -61,8 +61,8 @@ function FinishSuggestions() {
   };
 
   return (
-    <div>
-      <div className={"input "  + current.id}>
+    <div className="finish">
+      {(finish[1] || finish[2]) && <div className={"input-501 "  + "input-501-" + current.id}>
         <input
           type='number'
           placeholder='dart 1'
@@ -70,6 +70,7 @@ function FinishSuggestions() {
           value={dart1}
           onChange={onChange}
           ref={inputEl}
+          className="input-dartOne"
         />
         <input
           type='number'
@@ -78,8 +79,9 @@ function FinishSuggestions() {
           value={dart2}
           onChange={onChange}
           ref={inputElTwo}
+          className="input-dartTwo"
         />
-      </div>
+      </div>}
       <div>
         {finish[1] && <div>P1: {finish[1]}</div>}
         {finish[2] && <div>P2: {finish[2]}</div>}
