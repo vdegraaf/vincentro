@@ -22,6 +22,7 @@ function FinishSuggestions() {
 
   useEffect(() => {
     getFinishes();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [players]);
 
   useEffect(() => {
@@ -61,34 +62,33 @@ function FinishSuggestions() {
   };
 
   return (
-    <div className="finish">
-     
-      <div className="finish-scores">
-        {finish[1] && <div className="finish-P1">{finish[1]}</div>}
-        {finish[2] && <div  className="finish-P2" >{finish[2]}</div>}
+    <div className='finish'>
+      <div className='finish-scores'>
+        {finish[1] && <div className='finish-P1'>{finish[1]}</div>}
+        {finish[2] && <div className='finish-P2'>{finish[2]}</div>}
       </div>
-      {(finish[1] || finish[2]) && <div className={"input-501 "  + "input-501-" + current.id}>
-    
-        <input
-          type='number'
-          placeholder='dart 1'
-          name='dart1'
-          value={dart1}
-          onChange={onChange}
-          ref={inputEl}
-          className="input-dartOne"
-        />
-        <input
-          type='number'
-          placeholder='dart 2'
-          name='dart2'
-          value={dart2}
-          onChange={onChange}
-          ref={inputElTwo}
-          className="input-dartTwo"
-        />
-      </div>}
-      
+      {(finish[1] || finish[2]) && (
+        <div className={'input-501 input-501-' + current.id}>
+          <input
+            type='number'
+            placeholder='dart 1'
+            name='dart1'
+            value={dart1}
+            onChange={onChange}
+            ref={inputEl}
+            className='input-dartOne'
+          />
+          <input
+            type='number'
+            placeholder='dart 2'
+            name='dart2'
+            value={dart2}
+            onChange={onChange}
+            ref={inputElTwo}
+            className='input-dartTwo'
+          />
+        </div>
+      )}
     </div>
   );
 }

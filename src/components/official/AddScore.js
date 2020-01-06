@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import GameContext from '../../context/game/gameContext';
 import OfficialContext from '../../context/official/officialContext';
-import { S_IWOTH } from 'constants';
 
 const AddScore = () => {
   const gameContext = useContext(GameContext);
