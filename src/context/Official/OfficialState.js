@@ -65,7 +65,7 @@ const OfficialState = props => {
     } else {
       updatedScore = totalScore[0] - turnScore[0];
     }
-    console.log('updateTotalScore caal')
+
     dispatch({
       type: UPDATE_TOTAL_SCORE,
       payload: { playerId, updatedScore }
