@@ -9,39 +9,35 @@ const TotalScore = () => {
   const { players, updateTotalScore } = officialContext;
   const { current } = gameContext;
   const lastId = current.id === 1 ? 2 : 1;
-  const { turnScore } = players[lastId === 1 ? 0 : 1];
+  const { turnScore, totalScore } = players[lastId === 1 ? 0 : 1];
 
   useEffect(() => {
     if (turnScore.length > 0) {
-      
-      updateTotalScore(lastId);
+      if (totalScore.length - 1 === turnScore.length) {
+        return;
+      } else updateTotalScore(lastId);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [turnScore]);
 
-  const getAvg = (array) => {
-
-    if(array.length === 0) {
-
-      return 0
+  const getAvg = array => {
+    if (array.length === 0) {
+      return 0;
     }
 
     const newArr = array.map(item => {
-      return parseInt(item)
-    })
+      return parseInt(item);
+    });
 
-    const arrAvg = arr => arr.reduce((a,b) => a + b, 0) / arr.length
-    
-    return Math.round(arrAvg(newArr))
+    const arrAvg = arr => arr.reduce((a, b) => a + b, 0) / arr.length;
 
-  }
-
+    return Math.round(arrAvg(newArr));
+  };
 
   return (
     <div>
       <div className='container-l container-l--absolute'>
         {players.map(player => {
-
           return (
             <div
               className={`container-m ${
@@ -59,17 +55,15 @@ const TotalScore = () => {
                     </div>
                   );
                 })}
-        
-        
-                
-                <div className="stats">
-                  <span className="stats__item">avg: {
-                    getAvg(player.turnScore)
-                    }</span>
-                  <span  className="stats__item">darts: {player.turnScore.length * 3}
-                  </span>
-                  </div>
-              
+
+              <div className='stats'>
+                <span className='stats__item'>
+                  avg: {getAvg(player.turnScore)}
+                </span>
+                <span className='stats__item'>
+                  darts: {player.turnScore.length * 3}
+                </span>
+              </div>
             </div>
           );
         })}

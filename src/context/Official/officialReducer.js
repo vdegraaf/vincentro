@@ -1,11 +1,11 @@
 import {
   ADD_SCORE,
   UPDATE_TOTAL_SCORE,
-  RESET_OFFICIAL
+  RESET_OFFICIAL,
+  DELETE_SCORE
 } from '../typesOfficial';
 
 export default (state, action) => {
-
   switch (action.type) {
     case ADD_SCORE:
       return state.map(player => {
@@ -17,8 +17,19 @@ export default (state, action) => {
           };
         } else return player;
       });
+    case DELETE_SCORE:
+      return state.map(player => {
+        if (player.id !== action.payload) {
+          player.turnScore.shift();
+          player.totalScore.shift();
+          return {
+            ...player,
+            turnScore: player.turnScore,
+            totalScore: player.totalScore
+          };
+        } else return player;
+      });
     case UPDATE_TOTAL_SCORE:
-     
       return state.map(player => {
         if (player.id === action.payload.playerId) {
           return {

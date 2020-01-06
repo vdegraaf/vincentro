@@ -72,29 +72,44 @@ input:focus {
 
 .stats {
   position: fixed;
-  bottom: 70px;
+  bottom: 80px;
   font-size: 18px;
 }
 
 .finish {
   display: block;
   width: 100%;
+
+  &-scores {
+    display: flex;
+    justify-content: space-between;
+  }
+
+}
+
+@keyframes easeIn {
+  0%   {background-color:red; margin-top :100px; opacity: 0;}
+  100% {background-color:green; margin-top:0px;}
 }
 
 .input-501 {
-  width: 100px;
-  margin: auto;
-
+  width: 32%;
   &-1 {
-    margin-right: 100%;
-    border: 1px solid red;
-    transition: all 2s linear;
-    left: -100px;
+    padding: 10px;
+    margin-right: 0px;
+    background-color:lightgrey ;
+    animation-name: easeIn;
+    animation-duration: 2s;
   }
   &-2 {
-    margin-right: 0;
+  
+    padding: 10px;
+    background-color:lightgrey ;
+    animation-name: easeIn;
+    animation-duration: 2s;
   }
 }
+
 
 
 .footer {

@@ -5,6 +5,7 @@ import GameContext from '../game/gameContext';
 
 import {
   ADD_SCORE,
+  DELETE_SCORE,
   UPDATE_TOTAL_SCORE,
   RESET_OFFICIAL
 } from '../typesOfficial';
@@ -35,7 +36,7 @@ const OfficialState = props => {
   }, [winner]);
 
   const addScore = (points, playerId) => {
-    console.log('ppoints:', points)
+    
     dispatch({
       type: ADD_SCORE,
       payload: { points: points, playerId: playerId }
@@ -43,6 +44,13 @@ const OfficialState = props => {
 
     switchPlayer();
   };
+
+  const deleteScore = (playerId) => {
+    dispatch({
+      type: DELETE_SCORE,
+      payload: playerId
+    })
+  }
 
   const updateTotalScore = playerId => {
     const { turnScore, totalScore } = players.find(players => players.id === playerId);
@@ -57,7 +65,7 @@ const OfficialState = props => {
     } else {
       updatedScore = totalScore[0] - turnScore[0];
     }
-
+    console.log('updateTotalScore caal')
     dispatch({
       type: UPDATE_TOTAL_SCORE,
       payload: { playerId, updatedScore }
@@ -76,6 +84,7 @@ const OfficialState = props => {
       value={{
         players,
         addScore,
+        deleteScore,
         updateTotalScore,
         resetOfficial
       }}

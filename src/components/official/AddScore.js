@@ -1,13 +1,15 @@
 import React, { useState, useContext } from 'react';
 import GameContext from '../../context/game/gameContext';
 import OfficialContext from '../../context/official/officialContext';
+import { S_IWOTH } from 'constants';
 
 const AddScore = () => {
   const gameContext = useContext(GameContext);
   const officialContext = useContext(OfficialContext);
 
   const { id } = gameContext.current;
-  const { addScore, players } = officialContext;
+  const {switchPlayer} = gameContext
+  const { addScore, deleteScore, players } = officialContext;
 
   const [score, setScore] = useState('');
 
@@ -34,6 +36,11 @@ const AddScore = () => {
     setScore('');
   };
 
+  const previous = () => {
+    switchPlayer()
+    deleteScore(id)
+  }
+
   return (
     <div className='container-l footer'>
       <form onSubmit={onSubmit} className='form-501 addScore'>
@@ -52,6 +59,7 @@ const AddScore = () => {
         </div>
         <div className='box box-m addScore'>
           <input className='addScore' type='submit' value='Submit' />
+          <div className='previousButton' onClick={() => previous()}>Previous</div>
         </div>
         {/* <div className='box box-m addScore' onClick={() => resetGame()}>
           Reset
