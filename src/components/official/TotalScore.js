@@ -38,9 +38,9 @@ const TotalScore = () => {
     <div>
       <div className='container-l container-l--absolute'>
       <>
-              {players[0].turnScore.length === 0 && <div>change 501</div>}
+              {/* {players[0].turnScore.length === 0 && <div>change 501</div>} */}
         {players.map(player => {
-          console.log(player.turnScore.length)
+          
           return (
            
               <div
