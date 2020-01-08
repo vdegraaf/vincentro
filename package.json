@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/vdegraaf/vincentro/issues"
   },
-  "homepage": "https://github.com/vdegraaf/vincentro#readme"
+  "homepage": "https://github.com/vdegraaf/vincentro#readme",
+  "dependencies": {
+    "config": "^3.2.4",
+    "express": "^4.17.1",
+    "mongodb": "^3.0.0",
+    "mongoose": "^4.13.20"
+  }
 }
