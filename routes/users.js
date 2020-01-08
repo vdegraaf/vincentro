@@ -15,19 +15,28 @@ router.post('/', async (req, res) => {
       name,
       vestiging
     })
-
     await user.save()
-
-    
   }
   catch (err) {
       console.error(err.message);
       res.status(500).json('Server Error');
     }
+});
+
+router.get('/', async (req, res) => {
+  
+
+  try {
+    const users = await User.find()
+    console.log('User:', users)
+  
+    res.send(users)
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json('Server Error');
+  }
+
 
 });
 
-router.get('/', (req, res) => {
-  res.send('Get user');
-});
-module.exports = router;
+module.exports = router

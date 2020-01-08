@@ -6,12 +6,7 @@ const app = express();
 // Connect databse
 connectDB();
 
-// app.get('/', (req, res) => res.json({
-//   id: 1,
-//   name: 'Vincent',
-//   vestiging: 'DXC'
-// }))
-
+// Body parser to get access to req body
 app.use(express.json({ extended: false }));
 
 // Define Routes
