@@ -7,36 +7,33 @@ const User = require('../models/User');
 // @access  Public
 
 router.post('/', async (req, res) => {
-  
-  const {name, vestiging} = req.body
-  
+  const { name, vestiging } = req.body;
+
   try {
     const user = new User({
       name,
       vestiging
-    })
-    await user.save()
-  }
-  catch (err) {
-      console.error(err.message);
-      res.status(500).json('Server Error');
-    }
-});
-
-router.get('/', async (req, res) => {
-  
-
-  try {
-    const users = await User.find()
-    console.log('User:', users)
-  
-    res.send(users)
+    });
+    await user.save();
   } catch (err) {
     console.error(err.message);
     res.status(500).json('Server Error');
   }
-
-
 });
 
-module.exports = router
+router.get('/', async (req, res) => {
+  
+  // Search with field input
+  const letters = req.query.name;
+  
+  try {
+    const users = await User.find({ name: { $regex: `.*${letters}.*` } });
+    
+    res.send(users);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json('Server Error');
+  }
+});
+
+module.exports = router;
