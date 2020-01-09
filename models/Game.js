@@ -14,6 +14,10 @@ const GameSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user',
     required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 });
 
