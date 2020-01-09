@@ -8,6 +8,14 @@ const UserSchema = mongoose.Schema({
   vestiging: {
     type: String,
     required: true
+  },
+  gamesLost: {
+    type: Number,
+    default: 0
+  },
+  gamesWon: {
+    type: Number,
+    default: 0
   }
 });
 
