@@ -21,14 +21,17 @@ router.post('/', async (req, res) => {
   }
 });
 
+// @route   GET api/users
+// @desc    Find users through input
+// @access  Public
+
 router.get('/', async (req, res) => {
-  
   // Search with field input
   const letters = req.query.name;
-  
+
   try {
     const users = await User.find({ name: { $regex: `.*${letters}.*` } });
-    
+
     res.send(users);
   } catch (err) {
     console.error(err.message);
