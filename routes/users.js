@@ -27,10 +27,10 @@ router.post('/', async (req, res) => {
 
 router.get('/', async (req, res) => {
   // Search with field input
-  const letters = req.query.name;
+  const searchInput = req.query.name;
   
   try {
-    let users = await User.find({ name: { $regex: `.*${letters}.*` } });
+    let users = await User.find({ name: { $regex: `.*${searchInput}.*` } });
     res.send(users);
   } catch (err) {
     console.error(err.message);

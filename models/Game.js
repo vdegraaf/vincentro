@@ -7,12 +7,12 @@ const GameSchema = mongoose.Schema({
   },
   winner: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    ref: 'user',
     required: true
   },
   loser: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    ref: 'user',
     required: true
   }
 });
