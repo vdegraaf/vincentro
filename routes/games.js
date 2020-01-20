@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const Game = require('../models/Game');
-const User = require('../models/User');
 
 // @route   POST api/games
 // @desc    Save finished game
