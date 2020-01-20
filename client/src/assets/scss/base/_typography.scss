@@ -1,0 +1,77 @@
+//BASE
+html {
+  font: 1em/1.82 "Work Sans", sans-serif;
+  font-weight: 500;
+  color: $white;
+}
+
+//HEADINGS
+@for $i from 1 through 5 {
+  h#{$i} {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 0;
+    color: $white;
+  }
+}
+
+//MOBILE SIZE
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.33;
+  margin-bottom: 1.125rem;
+}
+h3 {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+h4 {
+  font-size: 0.75rem;
+  line-height: 1.33;
+  margin-bottom: 1rem;
+  color: $primary;
+}
+
+a {
+  color: $primary;
+}
+
+.t--small {
+  font-size: 0.75rem;
+  line-height: 1.33;
+}
+
+// .t--big {
+//   @include font-style-big;
+// }
+
+//DESKTOP
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 5rem;
+    line-height: 0.95;
+  }
+  h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.17;
+  }
+  h4 {
+    font-size: 1rem;
+    line-height: 1.62;
+  }
+  h5 {
+    font-size: 0.75rem;
+    line-height: 1.83;
+  }
+}
