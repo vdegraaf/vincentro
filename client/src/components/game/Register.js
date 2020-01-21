@@ -51,8 +51,7 @@ const Register = () => {
   } else {
     return (
       <div className='container container__players'>
-        {/* <div onClick={getUsers} >Get users</div> */}
-        <form onSubmit={onSubmit} autoComplete='off' className='form__players'>
+        
           <input
             type='text'
             name='p1'
@@ -74,13 +73,10 @@ const Register = () => {
             className='input input__players'
           />
           <div>
-            <input
-              type='submit'
-              value='START GAME'
-              className='input input__players input__players--button'
-            />
-          </div>
-        </form>
+            <span onClick={onSubmit} className='cta-btn inActive'>
+              Start Game
+            </span>
+          </div> 
       </div>
     );
   }
