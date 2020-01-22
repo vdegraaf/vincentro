@@ -44,9 +44,21 @@ const Register = () => {
     return <Redirect to={`/${game}`} />;
   } else {
     return (
-      <div className='container container__players'>
+      <div className='application application__form-input'>
         
-          <input
+        <label htmlFor="phone">
+            <h4>Nickname</h4>
+            </label>
+            <input
+              type="text"            
+              name="nickname"
+              // onChange={handleChange}
+            />
+        
+        
+        
+        
+          {/* <input
             type='text'
             name='p1'
             placeholder='PLAYERONE'
@@ -65,12 +77,7 @@ const Register = () => {
             required
             spellCheck='false'
             className='input input__players'
-          />
-          <div>
-            <span onClick={onSubmit} className='cta-btn btn-inActive'>
-              Start Game
-            </span>
-          </div> 
+          /> */}
       </div>
     );
   }

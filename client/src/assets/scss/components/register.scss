@@ -11,3 +11,38 @@
   font-weight: bold;
   text-align: center;
 }
+
+.application {
+  h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #8ba0a9;
+  }
+
+  input {
+    color: #fff;
+    font-weight: 700;
+    background-color: #00151d;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    box-sizing: border-box;
+    width: 85%;
+    border: none;
+    border-bottom: 1px solid #8ba0a9;
+
+    &:hover {
+      border-bottom: 1px solid $primary;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $primary;
+      outline: none;
+    }
+  }
+
+  &__form-input {
+    margin-top: 1rem;
+    max-width: 100%;
+    overflow: hidden;
+  }
+}

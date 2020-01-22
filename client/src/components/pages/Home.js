@@ -5,7 +5,7 @@ import StartGame from '../game/StartGame'
 import AddPlayer from '../game/AddPlayer'
 
 const Home = () => {
-  const [isActive, setIsActive] = useState(false)
+  const [isActive, setIsActive] = useState(true)
 
   return (
     <div>
