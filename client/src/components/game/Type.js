@@ -1,50 +1,34 @@
 import React, { useContext } from 'react';
 import GameContext from '../../context/game/gameContext';
+import Official from '../icons/Official'
+import Circle from '../icons/Circle'
+import CricketLogo from '../icons/CricketLogo'
 
 const Type = () => {
   const gameContext = useContext(GameContext);
-  const { setGameType, game } = gameContext;
+  const { setGameType } = gameContext;
 
-  const onChange = e => {
-    setGameType(e.target.value);
+  const chooseGame = e => {
+    setGameType(e.currentTarget.dataset.value);
   };
 
   return (
     <div className='container container--radio'>
-      <label className='label label--radio'>
-        <input
-          type='radio'
-          name='game'
-          value='501'
-          checked={game === '501'}
-          onChange={onChange}
-          className='input--radio'
-        />
-        <img
-          className={`checkmark
-          ${game === '501' ? 'checkmark--true' : 'checkmark--false'}
-        `}
-        alt=""
-        />{' '}
-        501
-      </label>
-      <label className='label label--radio'>
-        <input
-          type='radio'
-          name='game'
-          value='Cricket'
-          checked={game === 'Cricket'}
-          onChange={onChange}
-          className='input--radio'
-        />
-        <img
-          className={`checkmark
-          ${game === 'Cricket' ? 'checkmark--true' : 'checkmark--false'}
-        `}
-        alt=""
-        />
-        Cricket
-      </label>
+     <div>
+       <div 
+          data-value='501'
+          onClick={chooseGame}>
+            <Circle />
+            <Official />
+       </div>
+       <div 
+        data-value='Cricket'
+        onClick={chooseGame}
+        >
+          <Circle />
+          <CricketLogo />
+       </div>
+     </div>
     </div>
   );
 };
