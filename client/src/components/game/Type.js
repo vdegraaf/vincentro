@@ -13,7 +13,7 @@ const Type = () => {
   };
  
   return (
-     <div>
+     <div className='typesContainer'>
        <div 
           data-value='501'
           onClick={chooseGame}
