@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import GameContext from '../../context/game/gameContext';
-import axios from 'axios'
 
 const Register = () => {
   const gameContext = useContext(GameContext);
@@ -40,11 +39,6 @@ const Register = () => {
       setRedirect(false);
     }, 2000);
   };
-
-  // const getUsers = () => {
-  //   axios.get('http://localhost:5000/')
-  //   console.log('click')
-  // }
 
   if (redirect) {
     return <Redirect to={`/${game}`} />;

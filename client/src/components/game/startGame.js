@@ -1,17 +1,17 @@
 import React from 'react';
 
 
-const Type = () => {
+const StartGame = () => {
   
   const submit = e => {
    
   };
  
   return (
-    <span onClick={submit} className='cta-btn btn-inActive'>
+    <span onClick={submit} className='cta-btn btn-active'>
     Start Game
   </span>
   );
 };
 
-export default Type;
+export default StartGame;
