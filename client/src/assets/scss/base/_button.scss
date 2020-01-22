@@ -1,0 +1,17 @@
+.btn {
+  &-active {
+    background-color: $primary;
+    color: $white;
+  }
+
+  &-inActive {
+    background-color: $darker;
+    color: $midtone;
+  }
+}
+
+.radio-btn {
+  &-inActive {
+    fill: $darker;
+  }
+}

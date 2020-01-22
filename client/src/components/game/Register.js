@@ -73,7 +73,7 @@ const Register = () => {
             className='input input__players'
           />
           <div>
-            <span onClick={onSubmit} className='cta-btn inActive'>
+            <span onClick={onSubmit} className='cta-btn btn-inActive'>
               Start Game
             </span>
           </div> 

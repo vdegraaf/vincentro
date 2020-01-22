@@ -10,14 +10,4 @@
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
-
-  &.active {
-    background-color: $primary;
-    color: $white;
-  }
-
-  &.inActive {
-    background-color: $darker;
-    color: $midtone;
-  }
 }

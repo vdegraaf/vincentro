@@ -6,30 +6,30 @@ import CricketLogo from '../icons/CricketLogo'
 
 const Type = () => {
   const gameContext = useContext(GameContext);
-  const { setGameType } = gameContext;
+  const { setGameType, game } = gameContext;
 
   const chooseGame = e => {
-    setGameType(e.currentTarget.dataset.value);
+    setGameType(e.currentTarget.dataset.value);    
   };
-
+ 
   return (
-    <div className='container container--radio'>
      <div>
        <div 
           data-value='501'
-          onClick={chooseGame}>
-            <Circle />
-            <Official />
+          onClick={chooseGame}
+          className='gameTypeBtn'>
+            <Circle className={game !== '501' ? 'radio-btn-inActive' : null} />
+            <Official className={game !== '501' ? 'radio-btn-inActive' : null} />
        </div>
        <div 
-        data-value='Cricket'
-        onClick={chooseGame}
-        >
-          <Circle />
-          <CricketLogo />
+          data-value='Cricket'
+          onClick={chooseGame}
+          className='gameTypeBtn'>
+          <Circle className={game !== 'Cricket' ? 'radio-btn-inActive' : null} />
+          <CricketLogo className={game !== 'Cricket' ? 'radio-btn-inActive' : null} />
        </div>
      </div>
-    </div>
+    
   );
 };
 
