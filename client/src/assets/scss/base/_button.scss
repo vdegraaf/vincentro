@@ -8,6 +8,20 @@
     background-color: $darker;
     color: $midtone;
   }
+
+  &-addPlayer {
+    display: flex;
+    justify-content: space-between;
+    padding: 17px;
+    border-radius: $border-radius;
+    width: 85%;
+    border: 1px dashed $primary;
+
+    h3 {
+      margin: auto;
+      margin-left: 0;
+    }
+  }
 }
 
 .radio-btn {
