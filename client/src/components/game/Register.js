@@ -1,17 +1,20 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import GameContext from '../../context/game/gameContext';
+import ChevronDown from '../icons/ChevronDown';
 
 const Register = () => {
   const gameContext = useContext(GameContext);
   const { addPlayers, game, players } = gameContext;
+  const [menu, setMenu] = useState(false)
 
   const [redirect, setRedirect] = useState(false);
   const [names, setNames] = useState({
     p1: '',
     p2: ''
   });
-
+  const filterOptions = ['DXC', 'DXT', 'Interactive']
+  
   const { p1, p2 } = names;
 
   useEffect(() => {
@@ -20,7 +23,7 @@ const Register = () => {
         p1: players[0].name,
         p2: players[1].name
       });
-    }
+    }   
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -39,14 +42,14 @@ const Register = () => {
       setRedirect(false);
     }, 2000);
   };
-
+   
   if (redirect) {
     return <Redirect to={`/${game}`} />;
   } else {
     return (
       <div className='application application__form-input'>
         
-        <label htmlFor="phone">
+        <label>
             <h4>Nickname</h4>
             </label>
             <input
@@ -54,8 +57,18 @@ const Register = () => {
               name="nickname"
               // onChange={handleChange}
             />
+     
+     <div className="menu">
+        <div  onClick={() => setMenu(!menu)}>
+          Kies je vestiging <ChevronDown />
+        </div>
         
+        {menu && filterOptions.map(title => {
+          return <div>{title}</div>
+        })}
         
+      
+      </div>
         
         
           {/* <input
@@ -69,7 +82,7 @@ const Register = () => {
             className='input input__players'
           />
           <input
-            type='text'
+            type='text'npm run st
             name='p2'
             placeholder='PLAYERTWO'
             value={p2}
