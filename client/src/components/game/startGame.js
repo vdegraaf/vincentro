@@ -1,15 +1,10 @@
 import React from 'react';
 
 
-const StartGame = ({ isActive }) => {
-
-  const submit = e => {
-
-  };
-
+const StartGame = ({ onClick, title }) => {
   return (
-    <span onClick={submit} className='cta-btn btn-active'>
-      {isActive ? "Add Player" : "Start Game"}
+    <span onClick={onClick} className='cta-btn btn-active'>
+      {title}
     </span>
   );
 };

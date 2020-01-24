@@ -1,4 +1,4 @@
-export const ADD_PLAYERS = 'ADD_PLAYERS';
+export const ADD_PLAYER = 'ADD_PLAYER';
 export const CURRENT_PLAYER = 'CURRENT_PLAYER';
 export const SET_WINNER = 'SET_WINNER';
 export const SET_NAMES = 'SET_NAMES';

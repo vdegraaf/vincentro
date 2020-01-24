@@ -5,16 +5,16 @@ import StartGame from '../game/StartGame';
 import AddPlayer from '../game/AddPlayer';
 
 const Home = () => {
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(false);
 
   return (
     <div>
       <Type />
       <div onClick={() => setIsActive(!isActive)}>
-        <AddPlayer />
+        {isActive === false && <AddPlayer />}
       </div>
-      {isActive && <Register />}
-      <StartGame isActive={isActive} />
+      {isActive && <Register isActive={isActive} />}
+      {isActive === false && <StartGame title='Start Game' />}
     </div>
   );
 };

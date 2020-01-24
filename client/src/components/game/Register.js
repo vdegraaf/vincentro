@@ -3,49 +3,38 @@ import { Redirect } from 'react-router-dom';
 import GameContext from '../../context/game/gameContext';
 import ChevronDown from '../icons/ChevronDown';
 import classNames from 'classnames';
+import StartGame from '../game/StartGame';
 
-const Register = () => {
+
+const Register = ({ isActive }) => {
   const gameContext = useContext(GameContext);
-  const { addPlayers, game, players } = gameContext;
+  const { game, players, addPlayer } = gameContext;
   const [menu, setMenu] = useState(false);
 
   const [redirect, setRedirect] = useState(false);
-  const [names, setNames] = useState({});
   const [department, setDepartment] = useState(null);
   const [nickname, setNickname] = useState('');
 
   const filterOptions = ['DXC', 'DXT', 'Interactive'];
+  const departmentInput = useRef(null);
 
   const menuClasses = classNames({
     "is-unfolded": menu
   });
 
-  const departmentInput = useRef(null);
-  const addPlayer = () => {
-
-    setDepartment(departmentInput.current.innerText);
-
+  const savePlayer = () => {
+    console.log('save player');
     if (department === "Kies je vestiging") {
       return console.error('Choose a department');
     }
+    if (players.length > 0) {
+      addPlayer({ id: 2, nickname, department });
 
-    console.log(nickname, 'from', department);
-
-    // setRedirect(true);
-    // setTimeout(() => {
-    //   setRedirect(false);
-    // }, 2000);
+    } else addPlayer({ id: 1, nickname, department });
   };
 
-
-
-
-
   const onChange = e => {
-
     setNickname(e.target.value);
-
-
   };
 
   // const onSubmit = e => {
@@ -57,9 +46,7 @@ const Register = () => {
   //   }, 2000);
   // };
 
-  const styles = {
-    color: "white"
-  };
+
   if (redirect) {
     return <Redirect to={`/${game}`} />;
   } else {
@@ -93,30 +80,7 @@ const Register = () => {
             }
           </div>
         </div>
-        <button style={styles} onClick={addPlayer}>Add Player</button>
-
-
-
-        {/* <input
-            type='text'
-            name='p1'
-            placeholder='PLAYERONE'
-            value={p1}
-            onChange={onChange}
-            required
-            spellCheck='false'
-            className='input input__players'
-          />
-          <input
-            type='text'npm run st
-            name='p2'
-            placeholder='PLAYERTWO'
-            value={p2}
-            onChange={onChange}
-            required
-            spellCheck='false'
-            className='input input__players'
-          /> */}
+        <StartGame onClick={savePlayer} title="Add Player" />
       </div>
     );
   }
