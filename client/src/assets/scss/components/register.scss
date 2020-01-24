@@ -46,3 +46,58 @@
     overflow: hidden;
   }
 }
+
+.menu {
+  position: relative;
+  width: 85%;
+  -webkit-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+
+  &.is-unfolded h4 {
+    color: $primary;
+  }
+
+  &:hover {
+    background-color: #1b3d4b;
+  }
+}
+
+.dropdown-menu {
+  color: $light-dark;
+  padding: 1rem;
+  align-items: center;
+  font-weight: bold;
+  background: transparent;
+  border: none;
+  vertical-align: text-bottom;
+  line-height: 1.62;
+
+  cursor: pointer;
+  text-align: left;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__wrapper {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    color: $white;
+    padding: 0.5rem 1rem;
+    font-weight: 400;
+    background: transparent;
+    border: none;
+    vertical-align: text-bottom;
+    list-style-type: none;
+    line-height: 1.62;
+    width: 100%;
+    text-align: left;
+  }
+}

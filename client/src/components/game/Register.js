@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import GameContext from '../../context/game/gameContext';
 import ChevronDown from '../icons/ChevronDown';
+import classNames from 'classnames'
 
 const Register = () => {
   const gameContext = useContext(GameContext);
@@ -42,6 +43,10 @@ const Register = () => {
       setRedirect(false);
     }, 2000);
   };
+  
+  const menuClasses = classNames({
+    "is-unfolded": menu
+  })
    
   if (redirect) {
     return <Redirect to={`/${game}`} />;
@@ -58,14 +63,21 @@ const Register = () => {
               // onChange={handleChange}
             />
      
-     <div className="menu">
-        <div  onClick={() => setMenu(!menu)}>
-          Kies je vestiging <ChevronDown />
-        </div>
-        
-        {menu && filterOptions.map(title => {
-          return <div>{title}</div>
+     <div className={`menu ${menuClasses}`}>
+        <div  onClick={() => setMenu(!menu)} class="dropdown-menu">
+          <div className="dropdown-menu__header"><h4>Kies je vestiging</h4> <ChevronDown /></div>
+          
+        {menu && filterOptions.map((title, index) => {
+          return <ul className="dropdown-menu__wrapper">
+              <li key={index} className="dropdown-menu__item">
+                {title}
+                </li>
+            </ul>
         })}
+        
+          
+          
+        </div>
         
       
       </div>
