@@ -1,5 +1,4 @@
 import React, { useState, useContext, useRef } from 'react';
-import { Redirect } from 'react-router-dom';
 import GameContext from '../../context/game/gameContext';
 import ChevronDown from '../icons/ChevronDown';
 import classNames from 'classnames';
@@ -8,10 +7,9 @@ import StartGame from '../game/StartGame';
 
 const Register = ({ isActive, setIsActive }) => {
   const gameContext = useContext(GameContext);
-  const { game, players, addPlayer } = gameContext;
+  const { players, addPlayer } = gameContext;
   const [menu, setMenu] = useState(false);
 
-  const [redirect, setRedirect] = useState(false);
   const [department, setDepartment] = useState(null);
   const [nickname, setNickname] = useState('');
 
@@ -40,18 +38,6 @@ const Register = ({ isActive, setIsActive }) => {
     setNickname(e.target.value);
   };
 
-  // const onSubmit = e => {
-  //   e.preventDefault();
-  //   addPlayers(names);
-  //   setRedirect(true);
-  //   setTimeout(() => {
-  //     setRedirect(false);
-  //   }, 2000);
-  // };
-
-  if (redirect) {
-    return <Redirect to={`/${game}`} />;
-  } else {
     return (
       <div className='application application__form-input'>
 
@@ -85,7 +71,7 @@ const Register = ({ isActive, setIsActive }) => {
         <StartGame onClick={savePlayer} title="Add Player" />
       </div>
     );
-  }
+  
 };
 
 export default Register;

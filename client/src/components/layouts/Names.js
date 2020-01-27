@@ -6,7 +6,7 @@ const Names = () => {
   const { players, current, switchPlayer } = gameContext;
 
   return (
-    <div className='container-names'>
+    <div className='container container-names'>
       {players.map(player => {
         return (
           <div key={player.id} onClick={() => switchPlayer()}>
