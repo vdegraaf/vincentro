@@ -37,16 +37,16 @@ const TotalScore = () => {
   return (
     <div>
       <div className='container-l container-l--absolute'>
-      <>
-              {/* {players[0].turnScore.length === 0 && <div>change 501</div>} */}
-        {players.map(player => {
-          
-          return (
-           
+        <>
+          {/* {players[0].turnScore.length === 0 && <div>change 501</div>} */}
+          {players.map(player => {
+
+            return (
+
               <div
                 className={`container-m ${
                   current.id === player.id ? `turn` : null
-                }`}
+                  }`}
                 key={player.id.toString()}
               >
                 {player.totalScore
@@ -69,10 +69,10 @@ const TotalScore = () => {
                   </span>
                 </div>
               </div>
-           
-          );
-        })}
-         </>
+
+            );
+          })}
+        </>
       </div>
     </div>
   );

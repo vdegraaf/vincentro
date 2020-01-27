@@ -20,25 +20,13 @@ const Cricket = () => {
     <div className='container__cricket'>
       {winner && <Winner id={winner} />}
       <Names />
-      <TotalScore />
-    <div className="container__score">
-      <ScoreContainer id={1} />
-      <Numbers />
-      <ScoreContainer id={2} />
-      </div>
-      {/* <div className='mainContainer'>
-        <div className='sideContainer'>
-          <TotalScore id={1} />
-          <ScoreContainer id={1} />
-        </div>
-
+      <TotalScore id={1} />
+      <TotalScore id={2} />
+      <div className="container__score">
+        <ScoreContainer id={1} />
         <Numbers />
-
-        <div className='sideContainer'>
-          <TotalScore id={2} />
-          <ScoreContainer id={2} />
-        </div>
-      </div> */}
+        <ScoreContainer id={2} />
+      </div>
     </div>
   );
 };

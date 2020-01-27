@@ -79,7 +79,7 @@ const CricketState = props => {
   };
 
   const decreaseScore = (id, number) => {
-    console.log('id in decreaseScore', id, number)
+
     const score = state
       .find(player => player.id === id)
       .scores.find(s => s.key === number);

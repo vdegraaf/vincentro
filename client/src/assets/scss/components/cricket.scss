@@ -3,6 +3,14 @@
   justify-content: space-around;
 }
 
+.container-names {
+  h2 {
+    width: 10rem;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+}
+
 .container__score {
   display: flex;
   width: 85%;
@@ -22,8 +30,8 @@
 
 .input-icon {
   display: inline-block;
-    height: 70px;
-    width: 35px;
+  height: 70px;
+  width: 35px;
 }
 
 .input-number {
@@ -31,13 +39,18 @@
 }
 
 .input-score {
-    height: 70px;
-    width: 35px;
-    margin: auto;
-line-height: 70px;
+  height: 70px;
+  width: 35px;
+  margin: auto;
+  line-height: 70px;
 }
 
 .isPlaying {
   color: $primary;
 }
 
+.totalScore {
+  text-align: center;
+  display: inline-block;
+  width: 50%;
+}
