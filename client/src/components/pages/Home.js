@@ -12,9 +12,7 @@ const Home = () => {
     <div>
       <Type />
       <Player />
-      <div onClick={() => setIsActive(!isActive)}>
-        {isActive === false && <AddPlayer />}
-      </div>
+      {isActive === false && <AddPlayer isActive={isActive} setIsActive={setIsActive} />}
       {isActive && <Register isActive={isActive} setIsActive={setIsActive} />}
       {isActive === false && <StartGame title='Start Game' />}
     </div>
