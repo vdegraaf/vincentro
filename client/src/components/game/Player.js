@@ -20,9 +20,9 @@ const Player = () => {
                   <h3>{player.nickname}</h3>
                   <h3>{player.department}</h3>
                 </span>
-                <span onClick={() => deletePlayer(player.id)}>
-                  <Close />
-                </span>
+
+                <Close deletePlayer={deletePlayer} playerId={player.id} />
+
               </div>
             </>
           );
