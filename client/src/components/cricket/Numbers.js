@@ -7,9 +7,9 @@ const Numbers = () => {
   }
 
   return (
-    <div className='numberContainer'>
+    <div classNAme="container__three">
       {numbers.map(number => (
-        <div className='numberContainer--number' key={number.toString()}>{number}</div>
+        <div  key={number.toString()}>{number}</div>
       ))}
     </div>
   );

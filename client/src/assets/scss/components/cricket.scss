@@ -3,6 +3,33 @@
   justify-content: space-around;
 }
 
+.container__score {
+  display: flex;
+  width: 85%;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.container__three {
+  width: 33%;
+}
+
+.score__input {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-icon {
+  display: inline-block;
+    height: 70px;
+    width: 35px;
+}
+
+.input-number {
+  margin: auto 0px;
+}
+
 .isPlaying {
   color: $primary;
 }
+

@@ -21,6 +21,11 @@ const Cricket = () => {
       {winner && <Winner id={winner} />}
       <Names />
       <TotalScore />
+    <div className="container__score">
+      <ScoreContainer id={1} />
+      <Numbers />
+      <ScoreContainer id={2} />
+      </div>
       {/* <div className='mainContainer'>
         <div className='sideContainer'>
           <TotalScore id={1} />

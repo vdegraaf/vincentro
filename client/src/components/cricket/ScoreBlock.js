@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import CricketContext from '../../context/cricket/cricketContext';
+import Minus from '../icons/CricketMinus'
+import Plus from '../icons/CricketPlus'
 
 const ScoreBlock = ({ id, number }) => {
   const cricketContext = useContext(CricketContext);
@@ -14,66 +16,41 @@ const ScoreBlock = ({ id, number }) => {
 
   if (id === 1) {
     return (
-      <div className='scoreContainer'>
-        <>
+      < div className="score__input">
+     
           {points === 0 && (
-            <img
-              id='decrease'
-              className='score__item points__item '
-              onClick={() => decreaseScore(id, number)}
-              src={require(`../../images/min-icon.png`)}
-              alt='icon'
-            />
+            <Minus id={id} number={number} counter={counter} decreaseScore={decreaseScore} />
           )}
           {points !== 0 && (
             <div
               id='decrease'
-              className='score__item '
+              className='input-number'
               onClick={() => decreaseScore(id, number)}
             >
               {decreaseButton}
             </div>
           )}
-          <img
-            id='increase'
-            className='score__item '
-            onClick={() => addScore(id, number)}
-            src={require(`../../images/counter-${counter}.png`)}
-            alt='icon'
-          />
-        </>
+          <Plus id={id} number={number} addScore={addScore}  className={counter === 0 ? '#ffb7b7' : counter === 1 ? '#a8a8ff' : counter === 2 ? '#a52008' : '#ff3333'} />
+       
       </div>
     );
   } else
     return (
-      <div className='scoreContainer'>
-        <>
-          <img
-            id='increase'
-            className='score__item '
-            onClick={() => addScore(id, number)}
-            src={require(`../../images/counter-${counter}.png`)}
-            alt='icon'
-          />
-          {points === 0 && (
-            <img
-              id='decrease'
-              className='score__item '
-              onClick={() => decreaseScore(id, number)}
-              src={require(`../../images/min-icon.png`)}
-              alt='icon'
-            />
+      <div className="score__input">
+   
+   <Plus id={id} number={number} addScore={addScore}  className={counter === 0 ? '#ffb7b7' : counter === 1 ? '#a8a8ff' : counter === 2 ? '#a52008' : '#ff3333'} />
+   {points === 0 && (
+            <Minus id={id} number={number} counter={counter} decreaseScore={decreaseScore} />
           )}
           {points !== 0 && (
             <div
               id='decrease'
-              className='score__item '
+              className='input-number'
               onClick={() => decreaseScore(id, number)}
             >
               {decreaseButton}
             </div>
           )}
-        </>
       </div>
     );
 };
