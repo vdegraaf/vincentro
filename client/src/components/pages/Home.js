@@ -9,7 +9,7 @@ import Player from '../game/Player';
 
 const Home = () => {
   const gameContext = useContext(GameContext);
-  const { game } = gameContext;
+  const { game, players } = gameContext;
   const [redirect, setRedirect] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
@@ -27,7 +27,7 @@ const Home = () => {
       <div>
         <Type />
         <Player />
-        {isActive === false && <AddPlayer isActive={isActive} setIsActive={setIsActive} />}
+        {isActive === false && players.length < 2 && <AddPlayer isActive={isActive} setIsActive={setIsActive} />}
         {isActive && <Register isActive={isActive} setIsActive={setIsActive} />}
         {isActive === false && <StartGame title='Start Game' onClick={startGame} />}
       </div>
