@@ -3,6 +3,7 @@ import Register from '../game/Register';
 import Type from '../game/Type';
 import StartGame from '../game/StartGame';
 import AddPlayer from '../game/AddPlayer';
+import Player from '../game/Player';
 
 const Home = () => {
   const [isActive, setIsActive] = useState(false);
@@ -10,10 +11,11 @@ const Home = () => {
   return (
     <div>
       <Type />
+      <Player />
       <div onClick={() => setIsActive(!isActive)}>
         {isActive === false && <AddPlayer />}
       </div>
-      {isActive && <Register isActive={isActive} />}
+      {isActive && <Register isActive={isActive} setIsActive={setIsActive} />}
       {isActive === false && <StartGame title='Start Game' />}
     </div>
   );

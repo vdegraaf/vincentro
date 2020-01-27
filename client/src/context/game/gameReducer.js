@@ -1,5 +1,6 @@
 import {
   ADD_PLAYER,
+  DELETE_PLAYER,
   SET_GAME,
   RESET_GAME,
   CURRENT_PLAYER,
@@ -7,13 +8,17 @@ import {
 } from '../typesOfficial';
 
 export default (state, action) => {
-  console.log('payload', action.payload);
   switch (action.type) {
     case ADD_PLAYER:
       return {
         ...state,
         players: [action.payload, ...state.players],
         current: { id: 1, name: action.payload.p1 }
+      };
+    case DELETE_PLAYER:
+      return {
+        ...state,
+        players: state.players.filter(player => player.id !== action.payload)
       };
     case CURRENT_PLAYER:
       return {

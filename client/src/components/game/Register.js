@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import StartGame from '../game/StartGame';
 
 
-const Register = ({ isActive }) => {
+const Register = ({ isActive, setIsActive }) => {
   const gameContext = useContext(GameContext);
   const { game, players, addPlayer } = gameContext;
   const [menu, setMenu] = useState(false);
@@ -23,14 +23,17 @@ const Register = ({ isActive }) => {
   });
 
   const savePlayer = () => {
-    console.log('save player');
+
     if (department === "Kies je vestiging") {
       return console.error('Choose a department');
     }
-    if (players.length > 0) {
+    if (players && players.length > 0) {
       addPlayer({ id: 2, nickname, department });
 
     } else addPlayer({ id: 1, nickname, department });
+
+    setIsActive(false);
+
   };
 
   const onChange = e => {
@@ -45,7 +48,6 @@ const Register = ({ isActive }) => {
   //     setRedirect(false);
   //   }, 2000);
   // };
-
 
   if (redirect) {
     return <Redirect to={`/${game}`} />;

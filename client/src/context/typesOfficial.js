@@ -1,4 +1,5 @@
 export const ADD_PLAYER = 'ADD_PLAYER';
+export const DELETE_PLAYER = 'DELETE_PLAYER';
 export const CURRENT_PLAYER = 'CURRENT_PLAYER';
 export const SET_WINNER = 'SET_WINNER';
 export const SET_NAMES = 'SET_NAMES';

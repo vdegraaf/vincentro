@@ -3,6 +3,7 @@ import GameContext from './gameContext';
 import GameReducer from './gameReducer';
 import {
   ADD_PLAYER,
+  DELETE_PLAYER,
   SET_GAME,
   RESET_GAME,
   CURRENT_PLAYER,
@@ -12,7 +13,7 @@ import {
 const GameState = props => {
   const initialState = {
     game: 501,
-    players: [],
+    players: [{ id: 1, nickname: 'Vincent', department: 'DXC' }],
     current: {},
     winner: null
   };
@@ -20,8 +21,11 @@ const GameState = props => {
   const [state, dispatch] = useReducer(GameReducer, initialState);
 
   const addPlayer = player => {
-    console.log('player', player);
     dispatch({ type: ADD_PLAYER, payload: player });
+  };
+
+  const deletePlayer = (id) => {
+    dispatch({ type: DELETE_PLAYER, payload: id });
   };
 
   const switchPlayer = () => {
@@ -57,6 +61,7 @@ const GameState = props => {
         game: state.game,
         winner: state.winner,
         addPlayer,
+        deletePlayer,
         setWinner,
         setGameType,
         resetGame,
