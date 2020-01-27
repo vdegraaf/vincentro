@@ -3,20 +3,14 @@ import GameContext from '../../context/game/gameContext';
 
 const Names = () => {
   const gameContext = useContext(GameContext);
-
-  const { players, current, game, switchPlayer } = gameContext;
+  const { players, current, switchPlayer } = gameContext;
 
   return (
-    <div className='container--names'>
+    <div className='container-names'>
       {players.map(player => {
         return (
-          <div key={player.id} className='box box-m' onClick={() => switchPlayer()}>
-            {current.name === player.name && game === '501' ? (
-              <i className='fas fa-star' />
-            ) : (
-              <div className='starPlaceholder'></div>
-            )}
-            {player.name}
+          <div key={player.id} onClick={() => switchPlayer()}>
+            <h2 className={player.id === current.id ? 'isPlaying' : ''} >{player.nickname}</h2>
           </div>
         );
       })}

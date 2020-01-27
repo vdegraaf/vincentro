@@ -13,14 +13,14 @@ const Cricket = () => {
 
   useEffect(() => {
     setWinner(winnerCheck());
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [players]);
 
   return (
     <div className='container__cricket'>
       {winner && <Winner id={winner} />}
       <Names />
-      <div className='mainContainer'>
+      {/* <div className='mainContainer'>
         <div className='sideContainer'>
           <TotalScore id={1} />
           <ScoreContainer id={1} />
@@ -32,7 +32,7 @@ const Cricket = () => {
           <TotalScore id={2} />
           <ScoreContainer id={2} />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
