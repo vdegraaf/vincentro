@@ -12,6 +12,7 @@
 
 .container__three {
   width: 33%;
+  text-align: center;
 }
 
 .score__input {
@@ -27,6 +28,13 @@
 
 .input-number {
   margin: auto 0px;
+}
+
+.input-score {
+    height: 70px;
+    width: 35px;
+    margin: auto;
+line-height: 70px;
 }
 
 .isPlaying {
