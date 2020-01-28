@@ -1,41 +1,50 @@
 import React, { useContext } from 'react';
 import OfficialContext from '../../context/official/officialContext';
-import GameContext from '../../context/game/gameContext';
 
 const TurnScore = () => {
   const officialContext = useContext(OfficialContext);
-  const gameContext = useContext(GameContext);
   let { players } = officialContext;
-  const { current } = gameContext;
+  
+  return ( <div className='turnScore-container'>  
+    {
+      players.map(player => (<div className='turnScore-score' key={player.id}>
+            {player.turnScore.map((score, index) => <h3 key={index} >{score}</h3>)}
+          </div>)
+      )
+    }
+  </div>)
+  
+  
 
-  return (
-    <div className='container-l'>
-      {players.map(player => {
-        return (
-          <div
-            className={`container-m container-m--turn ${
-              current.id === player.id ? `turn` : null
-            }`}
-            key={player.id.toString()}
-          >
-            {player.turnScore
-              .slice(0)
-              .reverse()
-              .map((points, index) => {
-                if (points === 0) {
-                  points = '-';
-                }
-                return (
-                  <div key={index} className='box box-s'>
-                    {points}
-                  </div>
-                );
-              })}
-          </div>
-        );
-      })}
-    </div>
-  );
+  // return (
+  //   <div className='container-l'>
+  //     {players.map(player => {
+  //       return (
+  //         <div
+  //           className={`container-m container-m--turn ${
+  //             current.id === player.id ? `turn` : null
+  //           }`}
+  //           key={player.id.toString()}
+  //         >
+  //           hoi
+  //           {player.turnScore
+  //             .slice(0)
+  //             .reverse()
+  //             .map((points, index) => {
+  //               if (points === 0) {
+  //                 points = '-';
+  //               }
+  //               return (
+  //                 <div key={index} className='box box-s'>
+  //                   {points}lala
+  //                 </div>
+  //               );
+  //             })}
+  //         </div>
+  //       );
+  //     })}
+  //   </div>
+  // );
 };
 
 export default TurnScore;

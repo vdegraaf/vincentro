@@ -24,10 +24,10 @@ const Official = () => {
     <div className='container__official'>
       <Names />
       <Stats />
-      {/* <TurnScore />
+      <TurnScore />
       <TotalScore />
-      {winner ? <Winner /> : <AddScore />}
-      <FinishSuggestions  /> */}
+      {/* {winner ? <Winner /> : <AddScore />}
+      <FinishSuggestions  />  */}
     </div>
   );
 };

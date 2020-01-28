@@ -18,12 +18,12 @@ const OfficialState = props => {
     {
       id: 1,
       totalScore: [501],
-      turnScore: []
+      turnScore: [10, 10, 15, 18, 0]
     },
     {
       id: 2,
       totalScore: [501],
-      turnScore: []
+      turnScore: [10, 10, 15, 18]
     }
   ];
 
@@ -31,7 +31,7 @@ const OfficialState = props => {
 
   useEffect(() => {
     if (winner === null) {
-      resetOfficial();
+      // resetOfficial();
     }
   }, [winner]);
 

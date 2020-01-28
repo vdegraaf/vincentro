@@ -23,45 +23,14 @@ const TotalScore = () => {
   
 
   return (
-    <div>
-      <div className='container-l container-l--absolute'>
-        <>
-          {/* {players[0].turnScore.length === 0 && <div>change 501</div>} */}
+    <div className='turnScore-container'>
           {players.map(player => {
-
             return (
-
-              <div
-                className={`container-m ${
-                  current.id === player.id ? `turn` : null
-                  }`}
-                key={player.id.toString()}
-              >
-                {player.totalScore
-                  .slice(0)
-                  .reverse()
-                  .map((points, index) => {
-                    return (
-                      <div key={index} className='box box-s'>
-                        {points}
-                      </div>
-                    );
-                  })}
-
-                <div className='stats'>
-                  <span className='stats__item'>
-                    {/* avg: {getAvg(player.turnScore)} */}
-                  </span>
-                  <span className='stats__item'>
-                    darts: {player.turnScore.length * 3}
-                  </span>
-                </div>
-              </div>
-
+              <h3 className='turnScore-score total'>
+                {player.totalScore[0]}    
+              </h3>
             );
           })}
-        </>
-      </div>
     </div>
   );
 };
