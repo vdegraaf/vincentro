@@ -19,7 +19,7 @@ export default (state, action) => {
       });
     case DELETE_SCORE:
       return state.map(player => {
-        if (player.id !== action.payload) {
+        if (player.id !== action.payload && player.totalScore.length !== 1) {
           player.turnScore.shift();
           player.totalScore.shift();
           return {

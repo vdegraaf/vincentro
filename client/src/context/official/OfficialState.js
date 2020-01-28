@@ -18,12 +18,12 @@ const OfficialState = props => {
     {
       id: 1,
       totalScore: [501],
-      turnScore: [10, 10, 15, 18, 0]
+      turnScore: []
     },
     {
       id: 2,
       totalScore: [501],
-      turnScore: [10, 10, 15, 18]
+      turnScore: []
     }
   ];
 

@@ -1,9 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import GameContext from '../../context/game/gameContext';
 
 const Names = () => {
   const gameContext = useContext(GameContext);
   const { players, current, switchPlayer, game } = gameContext;
+  
+  useEffect(() => {
+    
+    
+  }, [game])
 
   return (
     <div className='container container-names'>

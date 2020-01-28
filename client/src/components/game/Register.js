@@ -25,10 +25,13 @@ const Register = ({ isActive, setIsActive }) => {
     if (department === "Kies je vestiging") {
       return console.error('Choose a department');
     }
-    if (players && players.length > 0) {
-      addPlayer({ id: 2, nickname, department });
+    
+    addPlayer({ id: Math.random(), nickname, department})
+    
+    // if (players && players.length > 0) {
+    //   addPlayer({ id: 2, nickname, department });
 
-    } else addPlayer({ id: 1, nickname, department });
+    // } else addPlayer({ id: 1, nickname, department });
 
     setIsActive(false);
 

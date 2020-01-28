@@ -8,7 +8,7 @@ const TurnScore = () => {
   return ( <div className='turnScore-container'>  
     {
       players.map(player => (<div className='turnScore-score' key={player.id}>
-            {player.turnScore.reverse().map((score, index) => <h3 key={index} >{score}</h3>)}
+            {player.turnScore.slice(0).reverse().map((score, index) => <h3 key={index} >{score}</h3>)}
           </div>)
       )
     }

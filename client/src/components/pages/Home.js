@@ -15,6 +15,12 @@ const Home = () => {
 
 
   const startGame = () => {
+    
+    if(players.length !== 2) {
+      alert('Add two players') 
+      return
+    }
+       
     setRedirect(true);
     setTimeout(() => {
       setRedirect(false);
