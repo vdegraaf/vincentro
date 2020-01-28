@@ -1,12 +1,12 @@
 .typesContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
 }
 
 .gameTypeBtn {
   display: flex;
   align-items: center;
-  width: 45%;
   height: 50px;
 
   & > :first-child {

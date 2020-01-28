@@ -15,7 +15,7 @@ const Player = () => {
               <div className="btn-player" key={player.id}>
                 <span>
                   <h3>{player.nickname}</h3>
-                  <h3>{player.department}</h3>
+                  <h4>{player.department}</h4>
                 </span>
                 <Close deletePlayer={deletePlayer} playerId={player.id} />
               </div>

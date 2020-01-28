@@ -11,10 +11,12 @@
 
   &-addPlayer {
     display: flex;
+    margin: auto;
     justify-content: space-between;
     padding: 17px;
     border-radius: $border-radius;
     width: 85%;
+    height: 55px;
     border: 1px dashed $primary;
 
     h3 {
@@ -24,9 +26,13 @@
   }
 
   &-player {
-    background-color: #041c26;
+    background-color: $darkest;
+    margin: auto;
+    margin-bottom: 1rem;
     display: flex;
-    padding: 10px 17px;
+    padding: 7px;
+    padding-left: 20px;
+    padding-top: 15px;
     border-radius: 5px;
     width: 85%;
     justify-content: space-between;

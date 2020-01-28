@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <>
       {redirect && <Redirect to={`/${game}`} />}
-      <div>
+      <div className="homepage">
         <Type />
         <Player />
         {isActive === false && players.length < 2 && <AddPlayer isActive={isActive} setIsActive={setIsActive} />}
