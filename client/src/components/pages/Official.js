@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import GameContext from '../../context/game/gameContext';
 
 import Names from '../layouts/Names';
+import Stats from '../official/Stats'
 import AddScore from '../official/AddScore';
 import TurnScore from '../official/TurnScore';
 import TotalScore from '../official/TotalScore';
@@ -22,10 +23,11 @@ const Official = () => {
   return (
     <div className='container__official'>
       <Names />
-      <TurnScore />
+      <Stats />
+      {/* <TurnScore />
       <TotalScore />
       {winner ? <Winner /> : <AddScore />}
-      <FinishSuggestions  />
+      <FinishSuggestions  /> */}
     </div>
   );
 };

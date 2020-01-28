@@ -1,0 +1,13 @@
+
+.stats-wrapper {
+  display: flex;
+  justify-content: space-around;
+  
+  h4 {
+    color: $dark;
+  }
+}
+
+.stats {
+  display: flex;
+}
