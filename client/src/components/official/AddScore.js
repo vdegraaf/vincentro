@@ -59,9 +59,12 @@ const AddScore = () => {
             className='addScore-input'
           />
         </div>
-        <div className='addScore-item'>
-          <input  type='submit' value='Submit' />
-        </div >
+        
+        {/* <div onClick={onSubmit} className='addScore-item' type='submit' value='Submit'> */}
+          
+        <Add onSubmit={onSubmit} type='submit' value='Submit'/>
+          
+        {/* </div> */}
         
   
       </form>
