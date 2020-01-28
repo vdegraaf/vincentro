@@ -19,13 +19,3 @@ p {
   margin-top: 0;
 }
 
-@each $index, $shadow in $shadows {
-  .shdw-#{$index} {
-    box-shadow: $shadow;
-  }
-}
-
-//Fixes double scrollbar MS Edge
-.tl-edges {
-  overflow-y: hidden;
-}

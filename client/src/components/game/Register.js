@@ -51,7 +51,7 @@ const Register = ({ isActive, setIsActive }) => {
           value={nickname}
         />
 
-        <div className={`menu ${menuClasses}`}>
+        <div className={`dropdown ${menuClasses}`}>
           <div onClick={() => setMenu(!menu)} className="dropdown-menu">
             <div className="dropdown-menu__header" ref={departmentInput}>
               {!department ? "Kies je vestiging" : department}
