@@ -120,6 +120,9 @@ const CricketState = props => {
     const totalScoreP1 = state.find(player => player.id === 1).totalScore;
     const totalScoreP2 = state.find(player => player.id === 2).totalScore;
 
+    console.log('p1', counterP1, 'p2', counterP2)
+    
+    
     if (counterP1.every(i => i === true) && totalScoreP1 >= totalScoreP2) {
       return 1;
     }

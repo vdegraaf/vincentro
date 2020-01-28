@@ -27,6 +27,7 @@ function FinishSuggestions() {
 
   useEffect(() => {
     clear();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [current]);
 
   const getFinishes = () => {
