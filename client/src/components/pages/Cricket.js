@@ -18,7 +18,9 @@ const Cricket = () => {
 
   return (
     <div className='container__cricket'>
-      {winner && <Winner id={winner} />}
+      {/* {winner &&  */}
+      <Winner id={1} />
+      // }
       <Names />
       <TotalScore id={1} />
       <TotalScore id={2} />
