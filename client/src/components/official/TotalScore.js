@@ -20,7 +20,6 @@ const TotalScore = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [turnScore]);
 
-  
 
   return (
     <div className='turnScore-container'>

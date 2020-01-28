@@ -26,8 +26,8 @@ const Official = () => {
       <Stats />
       <TurnScore />
       <TotalScore />
-      {/* {winner ? <Winner /> : <AddScore />}
-      <FinishSuggestions  />  */}
+      {winner ? <Winner /> : <AddScore />}
+      {/* <FinishSuggestions  />  */}
     </div>
   );
 };

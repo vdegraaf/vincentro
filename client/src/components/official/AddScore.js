@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react';
 import GameContext from '../../context/game/gameContext';
 import OfficialContext from '../../context/official/officialContext';
+import Add from '../icons/Add';
+import Previous from '../icons/Previous';
 
 const AddScore = () => {
   const gameContext = useContext(GameContext);
@@ -41,9 +43,10 @@ const AddScore = () => {
   }
 
   return (
-    <div className='container-l footer'>
-      <form onSubmit={onSubmit} className='form-501 addScore'>
-        <div className='box box-m'>
+    <div className='addScore-container'>
+      <form onSubmit={onSubmit} className='addScore-form' >
+        <Previous previous={previous}/>
+        <div className='addScore-item'>
           <input
             type='number'
             name='score'
@@ -53,16 +56,14 @@ const AddScore = () => {
             required
             min='0'
             max='180'
-            className='addScore'
+          
           />
         </div>
-        <div className='box box-m addScore'>
-          <input className='addScore' type='submit' value='Submit' />
-          <div className='previousButton' onClick={() => previous()}>Previous</div>
-        </div>
-        {/* <div className='box box-m addScore' onClick={() => resetGame()}>
-          Reset
-        </div> */}
+        <div className='addScore-item'>
+          <input  type='submit' value='Submit' />
+        </div >
+        
+  
       </form>
     </div>
   );
