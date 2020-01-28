@@ -38,4 +38,25 @@
   &-item {
     width: 20%;
   }
+  
+  &-input {
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    background-color: #00151d;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0 0.5rem 0rem;
+    box-sizing: border-box;
+    width: 150%;
+    border: none;
+    border-bottom: 1px solid #8ba0a9;
+
+  
+    &:focus {
+      border-bottom: 1px solid $primary;
+      outline: none;
+    }
+  }
 }
+
+

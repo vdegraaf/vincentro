@@ -46,17 +46,17 @@ const AddScore = () => {
     <div className='addScore-container'>
       <form onSubmit={onSubmit} className='addScore-form' >
         <Previous previous={previous}/>
-        <div className='addScore-item'>
+        <div className='addScore-item '>
           <input
             type='number'
             name='score'
-            placeholder='Add Points'
+            placeholder='Score'
             value={score}
             onChange={onChange}
             required
             min='0'
             max='180'
-          
+            className='addScore-input'
           />
         </div>
         <div className='addScore-item'>
