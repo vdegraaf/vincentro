@@ -15,7 +15,7 @@ const AddScore = () => {
   const [score, setScore] = useState('');
 
   const validScoreCheck = () => {
-    console.log('validScoreCheck')
+    
     const { totalScore } = players.find(player => player.id === id);
    
     if (!totalScore) {
@@ -28,13 +28,12 @@ const AddScore = () => {
   };
 
   const onChange = e => {
-    console.log('onChange')
+    
     setScore(e.target.value);
   };
 
   const onSubmit = e => {
-    console.log('onSubmut')
-    console.log('id', id)
+
     e.preventDefault();
     let points = validScoreCheck() ? 0 : score;
     addScore(points, id);
@@ -43,7 +42,7 @@ const AddScore = () => {
   };
 
   const previous = () => {
-    console.log('previous')
+    
     switchPlayer()
     deleteScore(id)
   }

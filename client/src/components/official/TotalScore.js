@@ -9,7 +9,7 @@ const TotalScore = () => {
 
   const { players, updateTotalScore } = officialContext;
   const { current } = gameContext;
-  const lastId = players.find(p => p.id !== current.id)
+  const lastId = players.find(p => p.id !== current.id).id
   const { turnScore, totalScore } = players.find(p => p.id !== current.id)
 
   useEffect(() => {
