@@ -7,6 +7,7 @@ import {
   DECREMENT_SCORE,
   DECREMENT_COUNTER,
   UPDATE_TOTAL_SCORE,
+  SET_IDS,
   RESET_GAME
 } from '../typesCricket';
 
@@ -41,13 +42,18 @@ const CricketState = props => {
   ];
 
   const [state, dispatch] = useReducer(CricketReducer, initialState);
+  
+  const setIds = (players) => {
+    dispatch({
+      type: SET_IDS,
+      payload: players
+    })    
+  }
 
   const limitCheck = number => {
-    const counterP1 = state
-      .find(player => player.id === 1)
+    const counterP1 = state[0]
       .scores.find(s => s.key === number).counter;
-    const counterP2 = state
-      .find(player => player.id === 2)
+    const counterP2 = state[1]
       .scores.find(s => s.key === number).counter;
 
     if (counterP1 === 3 && counterP2 === 3) {
@@ -60,7 +66,7 @@ const CricketState = props => {
     if (limitCheck(number)) {
       return;
     }
-
+  
     const score = state
       .find(player => player.id === id)
       .scores.find(s => s.key === number);
@@ -110,30 +116,26 @@ const CricketState = props => {
   };
 
   const winnerCheck = () => {
-    const counterP1 = state
-      .find(player => player.id === 1)
+    const counterP1 = state[0]
       .scores.map(score => (score.counter === 3 ? true : false));
-    const counterP2 = state
-      .find(player => player.id === 2)
+    const counterP2 = state[1]
       .scores.map(score => (score.counter === 3 ? true : false));
 
-    const totalScoreP1 = state.find(player => player.id === 1).totalScore;
-    const totalScoreP2 = state.find(player => player.id === 2).totalScore;
-
-    console.log('p1', counterP1, 'p2', counterP2)
-    
+    const totalScoreP1 = state[0].totalScore;
+    const totalScoreP2 = state[1].totalScore;
     
     if (counterP1.every(i => i === true) && totalScoreP1 >= totalScoreP2) {
-      return 1;
+      return state[0].id;
     }
     if (counterP2.every(i => i === true) && totalScoreP2 >= totalScoreP1) {
-      return 2;
+      return state[1].id;
     }
   };
 
-  const resetGame = () => {
+  const resetGame = ({p1, p2}) => {
     dispatch({
-      type: RESET_GAME
+      type: RESET_GAME,
+      payload: {p1, p2}
     });
   };
 
@@ -145,7 +147,8 @@ const CricketState = props => {
         decreaseScore,
         updateTotalScore,
         winnerCheck,
-        resetGame
+        resetGame,
+        setIds
       }}
     >
       {props.children}

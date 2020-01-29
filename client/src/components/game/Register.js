@@ -5,9 +5,9 @@ import classNames from 'classnames';
 import StartGame from '../game/StartGame';
 
 
-const Register = ({ isActive, setIsActive }) => {
+const Register = ({ setIsActive }) => {
   const gameContext = useContext(GameContext);
-  const { players, addPlayer } = gameContext;
+  const { addPlayer } = gameContext;
   const [menu, setMenu] = useState(false);
 
   const [department, setDepartment] = useState(null);
@@ -26,13 +26,8 @@ const Register = ({ isActive, setIsActive }) => {
       return console.error('Choose a department');
     }
     
-    addPlayer({ id: Math.random(), nickname, department})
-    
-    // if (players && players.length > 0) {
-    //   addPlayer({ id: 2, nickname, department });
-
-    // } else addPlayer({ id: 1, nickname, department });
-
+    addPlayer({id: Math.random(), nickname, department})
+  
     setIsActive(false);
 
   };

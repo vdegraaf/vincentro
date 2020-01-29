@@ -4,6 +4,7 @@ import {
   INCREMENT_SCORE,
   DECREMENT_SCORE,
   UPDATE_TOTAL_SCORE,
+  SET_IDS,
   RESET_GAME
 } from '../typesCricket';
 
@@ -82,10 +83,17 @@ export default (state, action) => {
           };
         } else return player;
       });
+      case SET_IDS:
+        return state.map((player, index) => {
+          return {
+            ...player,
+            id: action.payload[index].id
+          }
+        })
     case RESET_GAME:
       return [
         {
-          id: 1,
+          id: action.payload.p1.id,
           scores: [
             { key: '20', points: 0, counter: 0 },
             { key: '19', points: 0, counter: 0 },
@@ -98,7 +106,7 @@ export default (state, action) => {
           totalScore: 0
         },
         {
-          id: 2,
+          id: action.payload.p2.id,
           scores: [
             { key: '20', points: 0, counter: 0 },
             { key: '19', points: 0, counter: 0 },
