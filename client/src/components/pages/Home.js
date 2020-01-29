@@ -44,7 +44,7 @@ const Home = () => {
       {redirect && <Redirect to={`/${game}`} />}
       <div className="homepage">
         <Type />
-        <Player />
+        {!isActive && <Player />}
         {isActive === false && players.length < 2 && <AddPlayer isActive={isActive} setIsActive={setIsActive} />}
         {isActive && <Register isActive={isActive} setIsActive={setIsActive} />}
         {isActive === false && <StartGame title='Start Game' onClick={startGame} />}

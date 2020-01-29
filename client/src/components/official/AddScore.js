@@ -64,7 +64,7 @@ const AddScore = () => {
             className='addScore-input'
           />
         </div>          
-        <Add onSubmit={onSubmit} type='submit' value='Submit'/>  
+        <Add onSubmit={onSubmit}/>  
       </form>
     </div>
   );

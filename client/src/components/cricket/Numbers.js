@@ -9,7 +9,7 @@ const Numbers = () => {
   return (
     <div className="container__three">
       {numbers.map(number => (
-        <h3 className="input-score" key={number.toString()}>{number}</h3>
+        <h3 className="input-score orange" key={number.toString()}>{number}</h3>
       ))}
     </div>
   );
