@@ -12,6 +12,10 @@
   display: flex;
 }
 
+.dark {
+  color: $dark;
+}
+
 .turnScore-container {
   display: flex;
   justify-content: space-around;
