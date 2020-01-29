@@ -13,7 +13,7 @@ export default (state, action) => {
       return {
         ...state,
         players: [action.payload, ...state.players],
-        current: { id: 1, name: action.payload.p1 }
+        current: {}
       };
     case DELETE_PLAYER:
       return {
@@ -25,7 +25,6 @@ export default (state, action) => {
         ...state,
         current: state.current.id === {} ? state.players[0] :
           state.players.find(p => p.id !== state.current.id)
-          
       };
     case SET_WINNER:
       return {

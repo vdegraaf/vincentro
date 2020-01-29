@@ -11,12 +11,13 @@ import FinishSuggestions from '../official/FinishSuggestions'
 
 const Official = () => {
   const gameContext = useContext(GameContext);
-  const { winner, switchPlayer, current } = gameContext;
+  const { winner, switchPlayer, current, players } = gameContext;
 
   useEffect(() => {
-    if(Object.keys(current).length === 0 && current.constructor === Object) {
-      switchPlayer();
+    if(players.find(p => p.id !== current.id)) {
+      switchPlayer()
     }
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
