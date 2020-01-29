@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import GameContext from '../../context/game/gameContext';
 import CricketContext from '../../context/cricket/cricketContext'
+import OfficialContext from '../../context/official/officialContext'
 import Register from '../game/Register';
 import Type from '../game/Type';
 import StartGame from '../game/StartGame';
@@ -12,10 +13,11 @@ const Home = () => {
   const gameContext = useContext(GameContext);
   const { game, players } = gameContext;
   const cricketContext = useContext(CricketContext)
+  const officialContext = useContext(OfficialContext)
   const { setIds } = cricketContext
+  const { setIdsOfficial } = officialContext
   const [redirect, setRedirect] = useState(false);
   const [isActive, setIsActive] = useState(false);
-
 
   const startGame = () => {
     
@@ -25,6 +27,10 @@ const Home = () => {
     }
     if(game === 'Cricket') {
       setIds(players)
+    }
+    
+    if(game === '501') {
+      setIdsOfficial(players)
     }
        
     setRedirect(true);

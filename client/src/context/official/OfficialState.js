@@ -6,6 +6,7 @@ import GameContext from '../game/gameContext';
 import {
   ADD_SCORE,
   DELETE_SCORE,
+  SET_IDS,
   UPDATE_TOTAL_SCORE,
   RESET_OFFICIAL
 } from '../typesOfficial';
@@ -34,6 +35,13 @@ const OfficialState = props => {
       // resetOfficial();
     }
   }, [winner]);
+  
+  const setIdsOfficial = (players) => {
+    dispatch({
+      type: SET_IDS,
+      payload: players
+    })    
+  }
 
   const addScore = (points, playerId) => {
     
@@ -86,7 +94,8 @@ const OfficialState = props => {
         addScore,
         deleteScore,
         updateTotalScore,
-        resetOfficial
+        resetOfficial,
+        setIdsOfficial
       }}
     >
       {props.children}

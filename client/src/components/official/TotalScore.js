@@ -1,3 +1,4 @@
+
 import React, { useContext, useEffect } from 'react';
 import OfficialContext from '../../context/official/officialContext';
 import GameContext from '../../context/game/gameContext';
@@ -23,9 +24,9 @@ const TotalScore = () => {
 
   return (
     <div className='turnScore-container'>
-          {players.map(player => {
+          {players.map((player, index) => {
             return (
-              <h3 className='turnScore-score total'>
+              <h3 className='turnScore-score total' key={index}>
                 {player.totalScore[0]}    
               </h3>
             );

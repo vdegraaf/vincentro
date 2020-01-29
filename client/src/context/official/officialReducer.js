@@ -1,6 +1,7 @@
 import {
   ADD_SCORE,
   UPDATE_TOTAL_SCORE,
+  SET_IDS,
   RESET_OFFICIAL,
   DELETE_SCORE
 } from '../typesOfficial';
@@ -38,6 +39,13 @@ export default (state, action) => {
           };
         } else return player;
       });
+      case SET_IDS:
+        return state.map((player, index) => {
+          return {
+            ...player,
+            id: action.payload[index].id
+          }
+        })
     case RESET_OFFICIAL:
       return [
         {
