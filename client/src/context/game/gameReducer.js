@@ -8,6 +8,7 @@ import {
 } from '../typesOfficial';
 
 export default (state, action) => {
+  console.log(action.type, action.payload)
   switch (action.type) {
     case ADD_PLAYER:
       return {
@@ -21,10 +22,12 @@ export default (state, action) => {
         players: state.players.filter(player => player.id !== action.payload)
       };
     case CURRENT_PLAYER:
+      console.log('state', state)
       return {
         ...state,
-        current: state.current.id === {} ? state.players[1] :
-          state.current.id === 1 ? state.players[1] : state.players[0]
+        current: state.current.id === {} ? state.players[0] :
+          state.players.find(p => p.id !== state.current.id)
+          
       };
     case SET_WINNER:
       return {

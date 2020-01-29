@@ -9,8 +9,8 @@ const TotalScore = () => {
 
   const { players, updateTotalScore } = officialContext;
   const { current } = gameContext;
-  const lastId = current.id === 1 ? 2 : 1;
-  const { turnScore, totalScore } = players[lastId === 1 ? 0 : 1];
+  const lastId = players.find(p => p.id !== current.id)
+  const { turnScore, totalScore } = players.find(p => p.id !== current.id)
 
   useEffect(() => {
     if (turnScore.length > 0) {
