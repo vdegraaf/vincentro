@@ -49,12 +49,12 @@ export default (state, action) => {
     case RESET_OFFICIAL:
       return [
         {
-          id: 1,
+          id: action.payload.p1.id,
           totalScore: [501],
           turnScore: []
         },
         {
-          id: 2,
+          id: action.payload.p2.id,
           totalScore: [501],
           turnScore: []
         }

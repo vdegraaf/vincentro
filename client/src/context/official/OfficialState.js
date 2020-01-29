@@ -80,9 +80,10 @@ const OfficialState = props => {
  
   };
 
-  const resetOfficial = () => {
+  const resetOfficial = (p1, p2) => {
     dispatch({
-      type: RESET_OFFICIAL
+      type: RESET_OFFICIAL,
+      payload: {p1, p2}
     });
   };
 

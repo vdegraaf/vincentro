@@ -46,7 +46,7 @@ const GameState = props => {
     });
   };
 
-  // Not used yet
+  
   const resetGame = () => {
         dispatch({
       type: RESET_GAME
