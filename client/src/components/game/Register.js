@@ -1,8 +1,9 @@
-import React, { useState, useContext, useRef } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 import GameContext from '../../context/game/gameContext';
 import ChevronDown from '../icons/ChevronDown';
 import classNames from 'classnames';
 import StartGame from './StartGame';
+import { set } from 'mongoose';
 
 
 const Register = ({ setIsActive }) => {
@@ -12,6 +13,7 @@ const Register = ({ setIsActive }) => {
 
   const [department, setDepartment] = useState(null);
   const [nickname, setNickname] = useState('');
+  const [disabled, setDisabled] = useState(true)
 
   const filterOptions = ['DXC', 'DXT', 'Interactive'];
   const departmentInput = useRef(null);
@@ -19,16 +21,21 @@ const Register = ({ setIsActive }) => {
   const menuClasses = classNames({
     "is-unfolded": menu
   });
+  
+  useEffect(() => {
+    console.log(department, typeof nickname)
+    if(department && nickname.length > 0) {
+      setDisabled(false)
+    } else setDisabled(true)
+   }, [department, nickname])
 
   const savePlayer = () => {
-
-    if (department === "Kies je vestiging") {
+    if (!department) {
       return console.error('Choose a department');
     }
     
     addPlayer({id: Math.random(), nickname, department})
-  
-    setIsActive(false);
+      setIsActive(false);
 
   };
 
@@ -66,7 +73,7 @@ const Register = ({ setIsActive }) => {
             }
           </div>
         </div>
-        <StartGame onClick={savePlayer} title="Add Player" />
+        <StartGame onClick={savePlayer} title="Add Player" disabled={disabled}/>
       </div>
     );
   
