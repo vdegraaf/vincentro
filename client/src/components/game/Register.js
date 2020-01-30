@@ -23,7 +23,6 @@ const Register = ({ setIsActive }) => {
   });
   
   useEffect(() => {
-    console.log(department, typeof nickname)
     if(department && nickname.length > 0) {
       setDisabled(false)
     } else setDisabled(true)

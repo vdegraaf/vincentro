@@ -1,12 +1,23 @@
 import React from 'react';
 
-const SvgCricketPlus = ({id, number, counter, addScore, className}) => {
+const SvgCircleCricket = ({id, number, counter, addScore}) => {  
+    return (<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => addScore(id, number)} className={` input-icon ${counter}`}>
+      <defs>
+        <clipPath id="second-circle">
+          <polygon points="24,-10 24,24 0,50 -100,50" />
+        </clipPath>
+        <clipPath id="third-circle">     
+          <polygon points="24,-10 24,24 50,50 -100,50" />
+        </clipPath>
+        <clipPath id="fourth-circle">     
+          <polygon points="0,0 0,0 100,100 100,100" />
+        </clipPath>
+      </defs>}
   
-  return (<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => addScore(id, number)} className={` input-icon ${counter}`}>
-  <path fillRule="evenodd" clipRule="evenodd" d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32ZM16.0002 23.619C20.2081 23.619 23.6193 20.2079 23.6193 16C23.6193 11.7921 20.2081 8.38094 16.0002 8.38094C11.7923 8.38094 8.38118 11.7921 8.38118 16C8.38118 20.2079 11.7923 23.619 16.0002 23.619Z" fill={className} fillOpacity="0.6"/>
-  </svg>
-  
-  )
-}
+      <path d="M48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24ZM11.9409 24C11.9409 30.6601 17.3399 36.0591 24 36.0591C30.6601 36.0591 36.0591 30.6601 36.0591 24C36.0591 17.3399 30.6601 11.9409 24 11.9409C17.3399 11.9409 11.9409 17.3399 11.9409 24Z" fill={!counter ? '#8ba0a9' : "#FE5000" } clip-path={`url(${counter === 1 ? '#second-circle' : counter === 2 ? '#third-circle' : ''})`} />
+    </svg>
 
-export default SvgCricketPlus
+  );
+};
+
+export default SvgCircleCricket;
