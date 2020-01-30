@@ -47,7 +47,7 @@ const Home = () => {
         {!isActive && <Player />}
         {isActive === false && players.length < 2 && <AddPlayer isActive={isActive} setIsActive={setIsActive} />}
         {isActive && <Register isActive={isActive} setIsActive={setIsActive} />}
-        {isActive === false && <StartGame title='Start Game' onClick={startGame} />}
+        {isActive === false && <StartGame title='Start Game' onClick={startGame} disabled={players.length !== 2 ? 'inActive' : 'active'} />}
       </div>
     </>
   );

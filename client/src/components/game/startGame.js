@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-const StartGame = ({ onClick, title }) => {
+const StartGame = ({ onClick, title, disabled }) => {
   return (
-    <span onClick={onClick} className='cta-btn btn-active'>
+    <span onClick={onClick} className={`cta-btn btn-${disabled}`}>
       {title}
     </span>
   );

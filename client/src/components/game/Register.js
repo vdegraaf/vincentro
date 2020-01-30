@@ -2,7 +2,7 @@ import React, { useState, useContext, useRef } from 'react';
 import GameContext from '../../context/game/gameContext';
 import ChevronDown from '../icons/ChevronDown';
 import classNames from 'classnames';
-import StartGame from '../game/StartGame';
+import StartGame from './StartGame';
 
 
 const Register = ({ setIsActive }) => {
