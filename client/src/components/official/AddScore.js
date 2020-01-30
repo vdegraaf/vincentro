@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import GameContext from '../../context/game/gameContext';
 import OfficialContext from '../../context/official/officialContext';
-import Add from '../icons/Add';
+import AddCircle from '../icons/AddCircle';
 import Previous from '../icons/Previous';
 
 const AddScore = () => {
@@ -64,7 +64,7 @@ const AddScore = () => {
             className='addScore-input'
           />
         </div>          
-        <Add onSubmit={onSubmit}/>  
+        <AddCircle onSubmit={onSubmit}/>  
       </form>
     </div>
   );
