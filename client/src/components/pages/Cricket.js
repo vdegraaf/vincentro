@@ -27,9 +27,9 @@ const Cricket = () => {
       <TotalScore id={gamePlayers[0].id} />
       <TotalScore id={gamePlayers[1].id} />
       <div className="container__score">
-        <ScoreContainer id={gamePlayers[0].id} />
+        <ScoreContainer id={gamePlayers[0].id} position={'left'} />
         <Numbers />
-        <ScoreContainer id={gamePlayers[1].id}/>
+        <ScoreContainer id={gamePlayers[1].id} position={'right'} />
       </div>
     </div>
   );
