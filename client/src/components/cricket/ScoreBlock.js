@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import CricketContext from '../../context/cricket/cricketContext';
 import Minus from '../icons/CricketMinus';
-import Plus from '../icons/CricketPlus';
 import CricketPlus from '../icons/CricketPlus'
 
 const ScoreBlock = ({ id, number }) => {

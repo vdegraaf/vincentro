@@ -3,8 +3,6 @@ import GameContext from '../../context/game/gameContext';
 import ChevronDown from '../icons/ChevronDown';
 import classNames from 'classnames';
 import StartGame from './StartGame';
-import { set } from 'mongoose';
-
 
 const Register = ({ setIsActive }) => {
   const gameContext = useContext(GameContext);
