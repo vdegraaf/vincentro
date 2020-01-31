@@ -22,7 +22,8 @@ const Cricket = () => {
   return (
     <div className='container__cricket'>
       
-      {winner && <Winner id={winner} />}
+      {winner ? <Winner id={winner} /> : 
+      <>
       <Names />
       <TotalScore id={gamePlayers[0].id} />
       <TotalScore id={gamePlayers[1].id} />
@@ -31,6 +32,8 @@ const Cricket = () => {
         <Numbers />
         <ScoreContainer id={gamePlayers[1].id} position={'right'} />
       </div>
+      </>
+}
     </div>
   );
 };
