@@ -25,7 +25,7 @@ const Winner = ({ id }) => {
         <h2><span className="orange">{winner}</span> has won with <span className="orange">{scoreDiff}</span> points!</h2>
       <div onClick={() => resetGame({p1, p2})} className="popup__revange">
         <div className="popup__revange-inner">
-        <Circle className="popup__revange-svg" />
+        <Circle className="popup__revange-svg" width='35px'/>
         <h3>Revenge</h3>
         </div>
       </div>
