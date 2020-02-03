@@ -26,8 +26,10 @@ const Winner = () => {
         <h4 className="dark">Average: <span className="orange">{getAvg(winnerStats.turnScore)}</span> | Darts: <span className="orange">{winnerStats.turnScore.length *3}</span></h4>
       </div>
       <div onClick={revange} className="popup__revange">
-        <Circle className="popup__revange-svg" />
+      <div className="popup__revange-inner">
+        <Circle className="popup__revange-svg" width='35px'/>
         <h3>Revenge</h3>
+        </div>
       </div>
     </div>
   );
