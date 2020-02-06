@@ -60,14 +60,14 @@ const Register = ({ setIsActive }) => {
               <ChevronDown />
             </div>
 
-            {menu && <ul className="dropdown-menu__wrapper">
+            <ul className={`dropdown-menu__wrapper ${menuClasses}`}>
               {filterOptions.map((title, index) => {
                 return <li key={index} className="dropdown-menu__item" onClick={() => setDepartment(title)}>
-                  {title}
+                  <h5>{title}</h5>
                 </li>;
               })}
             </ul>
-            }
+            
           </div>
         </div>
         <StartGame onClick={savePlayer} title="Add Player" disabled={disabled}/>
