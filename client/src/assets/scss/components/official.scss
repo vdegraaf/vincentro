@@ -30,11 +30,7 @@
   }
 }
 
-.addScore {
-  &-container {
-  
-  }
-  
+.addScore { 
   &-form {
     display: flex;
     justify-content: space-around;
@@ -55,6 +51,7 @@
     width: 100%;
     border: none;
     border-bottom: 1px solid #8ba0a9;
+    border-radius: 0;
 
     &::placeholder {
       color: $dark;
