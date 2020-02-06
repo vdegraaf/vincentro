@@ -56,7 +56,7 @@ const AddScore = () => {
     switchPlayer();
     deleteScore(id);
   };
-
+  
   return (
     <>
       <div className='addScore-container'>
@@ -73,7 +73,7 @@ const AddScore = () => {
               min='0'
               max='180'
               className='addScore-input'
-              readonly="true"
+              readOnly={isMobile ? true : false}
             />
           </div>
           <AddCircle onSubmit={onSubmit} />
