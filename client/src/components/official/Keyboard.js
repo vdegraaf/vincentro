@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Backspace from '../icons/BackSpace'
 
 
-const Keyboard = ({onChange, score}) => {
+const Keyboard = ({onChange, onBackspace}) => {
 
   const keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', '0']
   
@@ -17,9 +17,12 @@ const Keyboard = ({onChange, score}) => {
         className="keyboard-item"
         >{key}</div>
       })}
-      <div className="keyboard-item"><Backspace/></div>
+      <div onClick={() => onBackspace()}className="keyboard-item">
+        <Backspace />
+        </div>
     </div>
   )
 };
 
 export default Keyboard;
+ 

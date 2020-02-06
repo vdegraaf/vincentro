@@ -29,12 +29,17 @@ const AddScore = () => {
   };
 
   const onChange = e => {
-    console.log('event',e)
+    console.log('event', score, typeof score)
 
     setScore(score + e)
     // if keyboard is not active this fn should be called
     // setScore(e.target.value);
   };
+  
+  const onBackspace = () => {
+    console.log('score', score)
+    setScore(score.slice(0, -1));
+  }
 
   const onSubmit = e => {
 
@@ -73,7 +78,7 @@ const AddScore = () => {
         </form>
       </div>
 
-      <Keyboard onChange={onChange} score={score}/>
+      <Keyboard onChange={onChange} onBackspace={onBackspace} score={score}/>
 
     </>
   );
