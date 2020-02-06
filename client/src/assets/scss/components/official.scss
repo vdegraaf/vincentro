@@ -51,7 +51,7 @@
     margin-bottom: 0.5rem;
     padding: 0.5rem 0 0.5rem 0rem;
     box-sizing: border-box;
-    width: 150%;
+    width: 100%;
     border: none;
     border-bottom: 1px solid #8ba0a9;
 
@@ -63,4 +63,28 @@
   }
 }
 
-
+.keyboard {
+  &-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 25px;
+    width: 90%;
+    background-color: $darkest;
+  }
+  
+  &-item {
+    text-align: center;
+    font-size: 40px;
+    font-family: "Montserrat";
+    height: 60px;
+    line-height: 1.6;
+    
+    &:active {
+      background-color: $black;
+    }
+  }
+}
