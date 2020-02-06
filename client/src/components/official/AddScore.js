@@ -30,15 +30,15 @@ const AddScore = () => {
   };
 
   const onChange = e => {
-    console.log('event', score, typeof score)
-
-    setScore(score + e)
-    // if keyboard is not active this fn should be called
-    // setScore(e.target.value);
+    if(isMobile) {
+      setScore(score + e)
+    } else {
+      setScore(e.target.value);
+    }
+    
   };
   
   const onBackspace = () => {
-    console.log('score', score)
     setScore(score.slice(0, -1));
   }
 
@@ -50,8 +50,7 @@ const AddScore = () => {
     setScore('');
 
   };
-  console.log(isMobile, 'ismobile')
-
+  
   const previous = () => {
 
     switchPlayer();

@@ -25,12 +25,16 @@ const Official = () => {
     <div className='container__official'>
       {winner ? <Winner id={winner} /> :
         <>
+        <div className="background-solid">
           <Names />
           <Stats />
-          <TurnScore />
-          <TotalScore />
-          <AddScore />
-          {/* <FinishSuggestions  />  */}
+          </div>
+          <div className="bottom-container">
+            <TurnScore />
+            <TotalScore />
+            <AddScore />
+            {/* <FinishSuggestions  />  */}
+          </div>
         </>
       }
     </div>

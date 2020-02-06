@@ -5,7 +5,7 @@ import HomeBtn from '../icons/HomeBtn';
 
 const NavBar = ({ history }) => {
   return (
-    <div className={`${history.location.pathname === '/' ? 'nav' : ''}`}>
+    <div className={`${history.location.pathname === '/' ? 'nav' : 'home-btn__nav'}`}>
       <Link to='/'>
         {history.location.pathname === '/' ?
           <Logo /> :
