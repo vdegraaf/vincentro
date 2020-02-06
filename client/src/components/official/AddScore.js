@@ -73,6 +73,7 @@ const AddScore = () => {
               min='0'
               max='180'
               className='addScore-input'
+              readonly="true"
             />
           </div>
           <AddCircle onSubmit={onSubmit} />
