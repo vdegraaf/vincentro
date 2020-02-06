@@ -55,6 +55,7 @@
   text-align: center;
   margin-top: 1rem;
   border-radius: 0.5rem;
+  max-width: 100%;
 }
 
 .dropdown-menu {
@@ -67,8 +68,12 @@
   -webkit-tap-highlight-color: transparent;
 
   &__header {
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
+    display: inline-flex;
+   
+    svg {
+      margin-left:  auto;
+    }
   }
 
   &__wrapper {
