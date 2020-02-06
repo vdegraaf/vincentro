@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { isMobile } from 'react-device-detect';
 import GameContext from '../../context/game/gameContext';
 import OfficialContext from '../../context/official/officialContext';
 import AddCircle from '../icons/AddCircle';
@@ -49,6 +50,7 @@ const AddScore = () => {
     setScore('');
 
   };
+  console.log(isMobile, 'ismobile')
 
   const previous = () => {
 
@@ -78,7 +80,7 @@ const AddScore = () => {
         </form>
       </div>
 
-      <Keyboard onChange={onChange} onBackspace={onBackspace} score={score}/>
+      {isMobile && <Keyboard onChange={onChange} onBackspace={onBackspace} score={score}/>}
 
     </>
   );
