@@ -33,9 +33,9 @@ const Official = () => {
             <TotalScore />
             <AddScore />
           </div>
+          <FinishSuggestions  /> 
         </>
       }
-      <FinishSuggestions  /> 
     </div>
   );
 };
