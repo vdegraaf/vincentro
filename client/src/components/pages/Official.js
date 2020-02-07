@@ -17,7 +17,6 @@ const Official = () => {
     if (players.find(p => p.id !== current.id)) {
       switchPlayer();
     }
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -33,10 +32,10 @@ const Official = () => {
             <TurnScore />
             <TotalScore />
             <AddScore />
-            {/* <FinishSuggestions  />  */}
           </div>
         </>
       }
+      <FinishSuggestions  /> 
     </div>
   );
 };

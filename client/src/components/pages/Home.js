@@ -9,6 +9,7 @@ import StartGame from '../game/StartGame';
 import AddPlayer from '../game/AddPlayer';
 import Player from '../game/Player';
 
+
 const Home = () => {
   const gameContext = useContext(GameContext);
   const { game, players } = gameContext;
@@ -18,6 +19,8 @@ const Home = () => {
   const { setIdsOfficial } = officialContext
   const [redirect, setRedirect] = useState(false);
   const [isActive, setIsActive] = useState(false);
+  
+
 
   const startGame = () => {
     
@@ -25,6 +28,7 @@ const Home = () => {
       alert('Add two players') 
       return
     }
+    
     if(game === 'Cricket') {
       setIds(players)
     }

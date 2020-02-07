@@ -64,11 +64,11 @@ function FinishSuggestions() {
 
   return (
     <div className='finish'>
-      <div className='finish-scores'>
-        {finish[1] && <div className='finish-P1'>{finish[1]}</div>}
-        {finish[2] && <div className='finish-P2'>{finish[2]}</div>}
-      </div>
-      {(finish[1] || finish[2]) && (
+      
+        {finish[1] && <div className='finish-P1'>{finish[1].map(score => <div key={score}>{score}</div>)}</div>}
+        {finish[2] && <div className='finish-P2'>{finish[2].map(score => <div key={score}>{score}</div>)}</div>}
+      
+      {/* {(finish[1] || finish[2]) && (
         <div className={'input-501 input-501-' + current.id}>
           <input
             type='number'
@@ -89,7 +89,7 @@ function FinishSuggestions() {
             className='input-dartTwo'
           />
         </div>
-      )}
+      )} */}
     </div>
   );
 }
