@@ -19,3 +19,16 @@ svg[icon=true] {
     transform-origin: 50%;
   }
 }
+
+.svg {
+  
+  &-close {
+    width: 48px;
+    height: 24px;
+    
+    &:active {
+   
+      fill-opacity: 0.5 ;
+    }
+  }
+}

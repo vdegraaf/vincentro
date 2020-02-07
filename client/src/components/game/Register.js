@@ -17,7 +17,8 @@ const Register = ({ setIsActive }) => {
   const departmentInput = useRef(null);
 
   const menuClasses = classNames({
-    "is-unfolded": menu
+    "is-unfolded": menu,
+    "is-folded": !menu
   });
   
   useEffect(() => {

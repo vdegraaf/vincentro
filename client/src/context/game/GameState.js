@@ -21,13 +21,19 @@ const GameState = props => {
   const [state, dispatch] = useReducer(GameReducer, initialState);
 
   const addPlayer = player => {
-    dispatch({ type: ADD_PLAYER, payload: player });
+    // Adding timeout for user experience
+    setTimeout(() => {
+      dispatch({ type: ADD_PLAYER, payload: player });
+    }, 80);
   };
 
   const deletePlayer = (id) => {
-    dispatch({ type: DELETE_PLAYER, payload: id });
+    // Adding timeout for user experience
+    setTimeout(() => {
+      dispatch({ type: DELETE_PLAYER, payload: id });
+    }, 80);
   };
-
+  
   const switchPlayer = () => {
     dispatch({ type: CURRENT_PLAYER });
   };

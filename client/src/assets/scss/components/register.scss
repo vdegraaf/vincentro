@@ -57,6 +57,12 @@
   margin-top: 1rem;
   border-radius: 0.5rem;
   max-width: 100%;
+
+  &.is-unfolded {
+    .dropdown-menu svg {
+      color: $primary;
+    }
+  }
 }
 
 .dropdown-menu {
@@ -71,9 +77,9 @@
   &__header {
     width: 100%;
     display: inline-flex;
-   
+
     svg {
-      margin-left:  auto;
+      margin-left: auto;
     }
   }
 
@@ -81,16 +87,17 @@
     display: block;
     margin: 0;
     padding: 0;
-    transform: translateY(-1rem);
-    visibility: hidden;
-    transition: visibility 0s, transform 0.5s ease-out, max-height 0.4s ease-out, opacity 0.2s,
-      -webkit-transform 0.5s ease-out;
+
+    &.is-folded {
+      opacity: 0;
+      transition: opacity 0.5s, transform 0.5s;
+      transform: translateY(-1rem);
+    }
 
     &.is-unfolded {
-      visibility: visible;
+      transition: opacity 0.5s, transform 0.5s;
       opacity: 1;
       transform: translateY(0);
-      z-index: 1;
     }
   }
 
