@@ -61,9 +61,6 @@ function FinishSuggestions() {
       inputElTwo.current.value = '';
     }
   };
-  
-  console.log('P1:', finish[1],)
-  console.log('P2:', finish[2])
 
   return (
     <div className='finish'>

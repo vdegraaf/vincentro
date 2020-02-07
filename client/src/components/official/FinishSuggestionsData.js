@@ -1,7 +1,4 @@
-export default {
-  
-
-  
+export default {  
   2: ["D1"],
   3: ["1", "D1"],
   4: ["D2"],
