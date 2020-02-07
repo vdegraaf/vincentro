@@ -61,12 +61,15 @@ function FinishSuggestions() {
       inputElTwo.current.value = '';
     }
   };
+  
+  console.log('P1:', finish[1],)
+  console.log('P2:', finish[2])
 
   return (
     <div className='finish'>
       
-        {finish[1] && <div className='finish-P1'>{finish[1].map(score => <div key={score}>{score}</div>)}</div>}
-        {finish[2] && <div className='finish-P2'>{finish[2].map(score => <div key={score}>{score}</div>)}</div>}
+        {finish[1] && <div className='finish-P1'>{finish[1].map((score, i) => <div key={i}>{score}</div>)}</div>}
+        {finish[2] && <div className='finish-P2'>{finish[2].map((score, i) => <div key={i}>{score}</div>)}</div>}
       
       {/* {(finish[1] || finish[2]) && (
         <div className={'input-501 input-501-' + current.id}>
