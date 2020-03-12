@@ -7,6 +7,7 @@
     "classnames": "^2.2.6",
     "mongodb": "^3.4.1",
     "mongoose": "^4.13.20",
+    "netlify-cli": "^2.38.0",
     "node-sass": "^4.13.1",
     "react": "^16.9.0",
     "react-device-detect": "^1.11.14",
