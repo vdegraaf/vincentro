@@ -13,7 +13,7 @@ const Register = ({ setIsActive }) => {
   const [nickname, setNickname] = useState('');
   const [disabled, setDisabled] = useState(true)
 
-  const filterOptions = ['DXC', 'DXT', 'Interactive'];
+  const filterOptions = ['DXC', 'DXT', 'Interactive', 'DC', 'Next', 'BA'];
   const departmentInput = useRef(null);
 
   const menuClasses = classNames({
