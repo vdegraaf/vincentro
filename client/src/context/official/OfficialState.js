@@ -8,7 +8,8 @@ import {
   DELETE_SCORE,
   SET_IDS,
   UPDATE_TOTAL_SCORE,
-  RESET_OFFICIAL
+  RESET_OFFICIAL,
+  SET_301
 } from '../typesOfficial';
 
 const OfficialState = props => {
@@ -86,6 +87,14 @@ const OfficialState = props => {
       payload: {p1, p2}
     });
   };
+  
+  const set301 = () => {
+    console.log('set301 in state')
+    dispatch({
+      type: SET_301,
+      payload: 301
+    });
+  }
 
   return (
     <OfficialContext.Provider
@@ -95,7 +104,8 @@ const OfficialState = props => {
         deleteScore,
         updateTotalScore,
         resetOfficial,
-        setIdsOfficial
+        setIdsOfficial,
+        set301
       }}
     >
       {props.children}

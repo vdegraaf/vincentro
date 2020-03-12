@@ -3,7 +3,8 @@ import {
   UPDATE_TOTAL_SCORE,
   SET_IDS,
   RESET_OFFICIAL,
-  DELETE_SCORE
+  DELETE_SCORE,
+  SET_301  
 } from '../typesOfficial';
 
 export default (state, action) => {
@@ -59,6 +60,13 @@ export default (state, action) => {
           turnScore: []
         }
       ];
+      case SET_301:
+        return state.map((player) => {
+          return {
+            ...player,
+            totalScore: [action.payload]
+          }
+        })
     default:
       return state;
   }

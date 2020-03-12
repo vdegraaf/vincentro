@@ -10,3 +10,5 @@ export const RESET_OFFICIAL = 'RESET_OFFICIAL';
 export const ADD_SCORE = 'ADD_SCORE';
 export const DELETE_SCORE = 'DELETE_SCORE';
 export const UPDATE_TOTAL_SCORE = 'UPDATE_TOTAL_SCORE';
+export const SET_301 = 'SET_301';
+

@@ -8,6 +8,7 @@ import TurnScore from '../official/TurnScore';
 import TotalScore from '../official/TotalScore';
 import Winner from '../official/Winner';
 import FinishSuggestions from '../official/FinishSuggestions';
+import Set301 from '../official/Set301'
 
 const Official = () => {
   const gameContext = useContext(GameContext);
@@ -25,6 +26,7 @@ const Official = () => {
       {winner ? <Winner id={winner} /> :
         <>
         <div className="background-solid">
+          <Set301 />
           <Names />
           <Stats />
           </div>

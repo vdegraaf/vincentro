@@ -148,7 +148,6 @@
   }
 }
 
-
 @keyframes easeInLeft {
   0% {
     transform: translateX(-3rem);
@@ -169,4 +168,9 @@
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+.gameSwitch {
+  position: absolute;
+  top: 43px;
 }
