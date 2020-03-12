@@ -89,10 +89,8 @@ const OfficialState = props => {
   };
   
   const set301 = () => {
-    console.log('set301 in state')
     dispatch({
-      type: SET_301,
-      payload: 301
+      type: SET_301
     });
   }
 

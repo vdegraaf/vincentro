@@ -64,7 +64,7 @@ export default (state, action) => {
         return state.map((player) => {
           return {
             ...player,
-            totalScore: [action.payload]
+            totalScore: [player.totalScore[0] === 501 ? 301 : 501]
           }
         })
     default:
