@@ -174,3 +174,33 @@
   position: absolute;
   top: 43px;
 }
+
+.warning {
+  position: absolute;
+  left: 50%;
+  top: 6%;
+  animation: easeInBottom 2s;
+  
+  
+  &-inner {
+    position: relative;
+    left: -50%;
+    width: 110px;
+    background-color: $primary;
+    padding: 5px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 600;
+  }
+}
+
+@keyframes easeInBottom {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

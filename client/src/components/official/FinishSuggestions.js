@@ -31,9 +31,14 @@ function FinishSuggestions() {
   }, [current]);
 
   const getFinishes = () => {
+    // console.log(players[0].totalScore[0])
+    // console.log(players[0].totalScore[0] < 171)
+    const finishP1 = players[0].totalScore[0] < 171 ? possibleFinishes[players[0].totalScore[0]] : ''
+    const finishP2 = players[1].totalScore[0] < 171 ? possibleFinishes[players[1].totalScore[0]] : ''
+    // console.log('finishP1', finishP1)
     setFinish({
-      1: possibleFinishes[players[0].totalScore[0]],
-      2: possibleFinishes[players[1].totalScore[0]]
+      1: finishP1,
+      2: finishP2,
     });
   };
 
