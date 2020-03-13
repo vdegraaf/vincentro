@@ -9,6 +9,7 @@ import TotalScore from '../official/TotalScore';
 import Winner from '../official/Winner';
 import FinishSuggestions from '../official/FinishSuggestions';
 import Set301 from '../official/Set301'
+import ResetBtn from '../official/ResetButton'
 
 const Official = () => {
   const gameContext = useContext(GameContext);
@@ -27,6 +28,7 @@ const Official = () => {
         <>
         <div className="background-solid">
           <Set301 />
+          <ResetBtn />
           <Names />
           <Stats />
           </div>
