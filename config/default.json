@@ -1,4 +1,0 @@
-{
-  "mongoURI": "mongodb://Vincent:vanhelsing@vincentro-darts-shard-00-00-lhhrn.mongodb.net:27017,vincentro-darts-shard-00-01-lhhrn.mongodb.net:27017,vincentro-darts-shard-00-02-lhhrn.mongodb.net:27017/test?ssl=true&replicaSet=Vincentro-darts-shard-0&authSource=admin&retryWrites=true&w=majority"
-}
-
