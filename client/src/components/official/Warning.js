@@ -1,11 +1,7 @@
-import React, { useContext } from 'react';
-import GameContext from '../../context/game/gameContext';
-import OfficialContext from '../../context/official/officialContext';
+import React from 'react';
 
 function Warning({message}) {
-  const gameContext = useContext(GameContext);
-  const officialContext = useContext(OfficialContext);
-
+  console.log('warning')
   return (
     <div className='warning'>
       <div className="warning-inner">
