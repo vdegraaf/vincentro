@@ -23,7 +23,7 @@
     color: #fff;
     font-weight: 700;
     background-color: #00151d;
-    margin-bottom: 0.5rem;
+    margin-bottom: 3.5rem;
     padding: 0.5rem 0 0.5rem 0.5rem;
     box-sizing: border-box;
     width: 100%;
@@ -77,9 +77,9 @@
   &__header {
     width: 100%;
     display: inline-flex;
-
+    
     svg {
-      margin-left: auto;
+      margin-right: 1rem;
     }
   }
 

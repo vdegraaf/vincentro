@@ -16,7 +16,7 @@ const AddScore = () => {
   const { addScore, deleteScore, players } = officialContext;
 
   const [score, setScore] = useState('');
-  const [warning, setWarning] = useState('hoi')
+  const [warning, setWarning] = useState('')
 
   const validScoreCheck = () => {
     const { totalScore } = players.find(player => player.id === id);
@@ -67,7 +67,7 @@ const AddScore = () => {
     switchPlayer();
     deleteScore(id);
   };
-  console.log('warning in AddScore', typeof warning)
+  
   return (
     <>
       <div className='addScore-container'>
