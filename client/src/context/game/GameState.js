@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import axios from 'axios';
 import GameContext from './gameContext';
 import GameReducer from './gameReducer';
 import {
@@ -13,18 +14,30 @@ import {
 const GameState = props => {
   const initialState = {
     game: '501',
-    players: [{id: 1, nickname: 'Cor', department: 'DXC'}, {id: 2, nickname: 'Ona', department: 'DXT'}],
+    players: [{ id: 1, nickname: 'Cor', department: 'DXC' }, { id: 2, nickname: 'Ona', department: 'DXT' }],
     current: {},
     winner: null
   };
 
   const [state, dispatch] = useReducer(GameReducer, initialState);
 
-  const addPlayer = player => {
-    // Adding timeout for user experience
-    setTimeout(() => {
+  const addPlayer = async player => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      }
+    };
+
+    try {
+      await axios.post('http://localhost:5000/api/users', player, config)
+        .then(res => player.id = res.data._id);
       dispatch({ type: ADD_PLAYER, payload: player });
-    }, 80);
+      // TODO: add alert that player is added
+
+    } catch (err) {
+      console.log('ERROR:', err);
+    }
   };
 
   const deletePlayer = (id) => {
@@ -33,7 +46,7 @@ const GameState = props => {
       dispatch({ type: DELETE_PLAYER, payload: id });
     }, 80);
   };
-  
+
   const switchPlayer = () => {
     dispatch({ type: CURRENT_PLAYER });
   };
@@ -52,9 +65,9 @@ const GameState = props => {
     });
   };
 
-  
+
   const resetGame = () => {
-        dispatch({
+    dispatch({
       type: RESET_GAME
     });
   };
