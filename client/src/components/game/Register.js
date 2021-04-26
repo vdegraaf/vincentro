@@ -41,13 +41,7 @@ const Register = ({ setIsActive }) => {
 
     };
 
-
     const user = await saveUser(nickname, department, cb);
-    console.log("---   user", user);
-
-
-
-
   };
 
   const onChange = e => {

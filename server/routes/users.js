@@ -16,10 +16,15 @@ router.post('/', async (req, res) => {
     });
     await user.save();
     res.status(200).json({
-      message: `User with name ${name} has been saved`
-  });
+      message: `User with name ${name} has been saved`,
+      user: {
+        name,
+        vestiging
+      }
+  }); 
     
   } catch (err) {
+    console.log('--errorr in server--')
     console.error(err.message);
     res.status(500).json('Server Error');
   }
