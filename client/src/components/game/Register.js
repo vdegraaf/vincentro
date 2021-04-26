@@ -34,14 +34,18 @@ const Register = ({ setIsActive }) => {
     }
 
     const cb = (data) => {
-      const name = data.user.name;
-      const vestiging = data.user.vestiging;
-      addPlayer({ id: Math.random(), nickname: name, department: vestiging });
-      setIsActive(false);
 
+      return data;
     };
 
+
     const user = await saveUser(nickname, department, cb);
+
+    addPlayer({ id: Math.random(), nickname, department });
+    setIsActive(false);
+
+
+
   };
 
   const onChange = e => {
