@@ -7,17 +7,14 @@ const User = require('../models/User');
 // @access  Public
 
 router.post('/', async (req, res) => {
-  console.log("---   req", req.body)
   const { name, vestiging } = req.body; 
 
   try {
-    console.log('--try--')
     const user = new User({ 
       name,
       vestiging
     });
     await user.save();
-    
     res.status(200).json({
       message: `User with name ${name} has been saved`
   });
@@ -33,7 +30,6 @@ router.post('/', async (req, res) => {
 // @access  Public
 
 router.get('/', async (req, res) => {
-  console.log("---   req", req.query)
   // Search with field input
   const searchInput = req.query.name;
   
