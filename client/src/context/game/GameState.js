@@ -13,7 +13,7 @@ import {
 const GameState = props => {
   const initialState = {
     game: '501',
-    players: [{id: 1, nickname: 'Cor', department: 'DXC'}, {id: 2, nickname: 'Ona', department: 'DXT'}],
+    players: [{ id: 1, nickname: 'Corona', department: 'DXC' }, { id: 2, nickname: 'Vaccin', department: 'DXT' }],
     current: {},
     winner: null
   };
@@ -33,7 +33,7 @@ const GameState = props => {
       dispatch({ type: DELETE_PLAYER, payload: id });
     }, 80);
   };
-  
+
   const switchPlayer = () => {
     dispatch({ type: CURRENT_PLAYER });
   };
@@ -52,9 +52,9 @@ const GameState = props => {
     });
   };
 
-  
+
   const resetGame = () => {
-        dispatch({
+    dispatch({
       type: RESET_GAME
     });
   };
